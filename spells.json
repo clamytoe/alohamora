@@ -1,0 +1,1672 @@
+[
+  {
+    "name": "Aberto",
+    "description": "Opening Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Opening_Charm"
+  },
+  {
+    "name": "Accio",
+    "description": "Summoning Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Summoning_Charm"
+  },
+  {
+    "name": "Age Line",
+    "description": "Age Line",
+    "link": "https://harrypotter.fandom.com/wiki/Age_Line"
+  },
+  {
+    "name": "Aguamenti",
+    "description": "Water-Making Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Water-Making_Spell"
+  },
+  {
+    "name": "Alarte Ascendare",
+    "description": "Alarte Ascendare",
+    "link": "https://harrypotter.fandom.com/wiki/Alarte_Ascendare"
+  },
+  {
+    "name": "Albus Dumbledore's forceful spell",
+    "description": "Albus Dumbledore's forceful spell",
+    "link": "https://harrypotter.fandom.com/wiki/Albus_Dumbledore%27s_forceful_spell"
+  },
+  {
+    "name": "Alohomora",
+    "description": "Unlocking Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Unlocking_Charm"
+  },
+  {
+    "name": "Alohomora Duo",
+    "description": "Alohomora Duo",
+    "link": "https://harrypotter.fandom.com/wiki/Alohomora_Duo"
+  },
+  {
+    "name": "Altering Spell",
+    "description": "Altering Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Altering_Spell"
+  },
+  {
+    "name": "Amato Animo Animato Animagus",
+    "description": "Animagus Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Animagus_Spell"
+  },
+  {
+    "name": "Anapneo",
+    "description": "Anapneo",
+    "link": "https://harrypotter.fandom.com/wiki/Anapneo"
+  },
+  {
+    "name": "Anteoculatia",
+    "description": "Anteoculatia",
+    "link": "https://harrypotter.fandom.com/wiki/Anteoculatia"
+  },
+  {
+    "name": "Anti-Cheating Spell",
+    "description": "Anti-Cheating Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Anti-Cheating_Spell"
+  },
+  {
+    "name": "Anti-Apparition Charm",
+    "description": "Anti-Apparition Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Anti-Apparition_Charm"
+  },
+  {
+    "name": "Anti-Disapparition Jinx",
+    "description": "Anti-Disapparition Jinx",
+    "link": "https://harrypotter.fandom.com/wiki/Anti-Disapparition_Jinx"
+  },
+  {
+    "name": "Anti-intruder jinx",
+    "description": "Anti-intruder jinx",
+    "link": "https://harrypotter.fandom.com/wiki/Anti-intruder_jinx"
+  },
+  {
+    "name": "Antonin Dolohov's curse",
+    "description": "Antonin Dolohov's curse",
+    "link": "https://harrypotter.fandom.com/wiki/Antonin_Dolohov%27s_curse"
+  },
+  {
+    "name": "Aparecium",
+    "description": "Revealing Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Revealing_Charm"
+  },
+  {
+    "name": "Appare Vestigium",
+    "description": "Tracking Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Tracking_Spell"
+  },
+  {
+    "name": "Apparition",
+    "description": "Apparition",
+    "link": "https://harrypotter.fandom.com/wiki/Apparition"
+  },
+  {
+    "name": "Aqua Eructo",
+    "description": "Aqua Eructo",
+    "link": "https://harrypotter.fandom.com/wiki/Aqua_Eructo"
+  },
+  {
+    "name": "Arania Exumai",
+    "description": "Spider-Banishing Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Spider-Banishing_Charm"
+  },
+  {
+    "name": "Arresto Momentum",
+    "description": "Slowing Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Slowing_Charm"
+  },
+  {
+    "name": "Arrow-shooting spell",
+    "description": "Arrow Shooting Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Arrow_Shooting_Spell"
+  },
+  {
+    "name": "Ascendio",
+    "description": "Ascendio",
+    "link": "https://harrypotter.fandom.com/wiki/Ascendio"
+  },
+  {
+    "name": "Atmospheric Charm",
+    "description": "Atmospheric Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Atmospheric_Charm"
+  },
+  {
+    "name": "Avada Kedavra",
+    "description": "Killing Curse",
+    "link": "https://harrypotter.fandom.com/wiki/Killing_Curse"
+  },
+  {
+    "name": "Avifors",
+    "description": "Avifors Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Avifors_Spell"
+  },
+  {
+    "name": "Avenseguim",
+    "description": "Avenseguim",
+    "link": "https://harrypotter.fandom.com/wiki/Avenseguim"
+  },
+  {
+    "name": "Avis",
+    "description": "Bird-Conjuring Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Bird-Conjuring_Charm"
+  },
+  {
+    "name": "Babbling Curse",
+    "description": "Babbling Curse",
+    "link": "https://harrypotter.fandom.com/wiki/Babbling_Curse"
+  },
+  {
+    "name": "Badgering",
+    "description": "Badgering",
+    "link": "https://harrypotter.fandom.com/wiki/Badgering"
+  },
+  {
+    "name": "Basic Cast",
+    "description": "Basic Cast",
+    "link": "https://harrypotter.fandom.com/wiki/Basic_Cast"
+  },
+  {
+    "name": "Bat-Bogey Hex",
+    "description": "Bat-Bogey Hex",
+    "link": "https://harrypotter.fandom.com/wiki/Bat-Bogey_Hex"
+  },
+  {
+    "name": "Baubillious",
+    "description": "Baubillious",
+    "link": "https://harrypotter.fandom.com/wiki/Baubillious"
+  },
+  {
+    "name": "Bedazzling Hex",
+    "description": "Bedazzling Hex",
+    "link": "https://harrypotter.fandom.com/wiki/Bedazzling_Hex"
+  },
+  {
+    "name": "Bewitched Snowballs",
+    "description": "Bewitched Snowballs",
+    "link": "https://harrypotter.fandom.com/wiki/Bewitched_Snowballs"
+  },
+  {
+    "name": "Bluebell Flames",
+    "description": "Bluebell Flames",
+    "link": "https://harrypotter.fandom.com/wiki/Bluebell_Flames"
+  },
+  {
+    "name": "Blue sparks",
+    "description": "Blue sparks",
+    "link": "https://harrypotter.fandom.com/wiki/Blue_sparks"
+  },
+  {
+    "name": "Bombarda",
+    "description": "Bombardment Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Bombardment_Spell"
+  },
+  {
+    "name": "Bombarda Maxima",
+    "description": "Bombarda Maxima",
+    "link": "https://harrypotter.fandom.com/wiki/Bombarda_Maxima"
+  },
+  {
+    "name": "Brackium Emendo",
+    "description": "Brackium Emendo",
+    "link": "https://harrypotter.fandom.com/wiki/Brackium_Emendo"
+  },
+  {
+    "name": "Bravery Charm",
+    "description": "Bravery Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Bravery_Charm"
+  },
+  {
+    "name": "Bridge-conjuring spell",
+    "description": "Bridge-conjuring spell",
+    "link": "https://harrypotter.fandom.com/wiki/Bridge-conjuring_spell"
+  },
+  {
+    "name": "Broom jinx",
+    "description": "Broom jinx",
+    "link": "https://harrypotter.fandom.com/wiki/Broom_jinx"
+  },
+  {
+    "name": "Bubble-Head Charm",
+    "description": "Bubble-Head Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Bubble-Head_Charm"
+  },
+  {
+    "name": "Bubble Spell",
+    "description": "Bubble Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Bubble_Spell"
+  },
+  {
+    "name": "Calvorio",
+    "description": "Hair Loss Curse",
+    "link": "https://harrypotter.fandom.com/wiki/Hair_Loss_Curse"
+  },
+  {
+    "name": "Cantis",
+    "description": "Singing Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Singing_Charm"
+  },
+  {
+    "name": "Capacious extremis",
+    "description": "Extension Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Extension_Charm"
+  },
+  {
+    "name": "Carpe Retractum",
+    "description": "Seize and pull charm",
+    "link": "https://harrypotter.fandom.com/wiki/Seize_and_pull_charm"
+  },
+  {
+    "name": "Cascading Jinx",
+    "description": "Cascading Jinx",
+    "link": "https://harrypotter.fandom.com/wiki/Cascading_Jinx"
+  },
+  {
+    "name": "Caterwauling Charm",
+    "description": "Caterwauling Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Caterwauling_Charm"
+  },
+  {
+    "name": "Cauldron to Sieve",
+    "description": "Cauldron to Sieve",
+    "link": "https://harrypotter.fandom.com/wiki/Cauldron_to_Sieve"
+  },
+  {
+    "name": "Cauldron to badger",
+    "description": "Cauldron to badger spell",
+    "link": "https://harrypotter.fandom.com/wiki/Cauldron_to_badger_spell"
+  },
+  {
+    "name": "Cave inimicum",
+    "description": "Cave inimicum",
+    "link": "https://harrypotter.fandom.com/wiki/Cave_inimicum"
+  },
+  {
+    "name": "Celescere",
+    "description": "Greenhouse Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Greenhouse_Charm"
+  },
+  {
+    "name": "Cheering Charm",
+    "description": "Cheering Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Cheering_Charm"
+  },
+  {
+    "name": "Circumrota",
+    "description": "Circumrota",
+    "link": "https://harrypotter.fandom.com/wiki/Circumrota"
+  },
+  {
+    "name": "Cleaning Charm",
+    "description": "Cleaning Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Cleaning_Charm"
+  },
+  {
+    "name": "Cistem Aperio",
+    "description": "Box Blasting Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Box_Blasting_Charm"
+  },
+  {
+    "name": "Colloportus",
+    "description": "Locking Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Locking_Spell"
+  },
+  {
+    "name": "Colloshoo",
+    "description": "Stickfast Hex",
+    "link": "https://harrypotter.fandom.com/wiki/Stickfast_Hex"
+  },
+  {
+    "name": "Colovaria",
+    "description": "Colour Change Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Colour_Change_Charm"
+  },
+  {
+    "name": "Combat Bolt",
+    "description": "Combat Bolt",
+    "link": "https://harrypotter.fandom.com/wiki/Combat_Bolt"
+  },
+  {
+    "name": "Concealment Charm",
+    "description": "Concealment Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Concealment_Charm"
+  },
+  {
+    "name": "Confringo",
+    "description": "Blasting Curse",
+    "link": "https://harrypotter.fandom.com/wiki/Blasting_Curse"
+  },
+  {
+    "name": "Confundo",
+    "description": "Confundus Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Confundus_Charm"
+  },
+  {
+    "name": "Confusion Hex",
+    "description": "Confusion Hex",
+    "link": "https://harrypotter.fandom.com/wiki/Confusion_Hex"
+  },
+  {
+    "name": "Conjunctivitis Curse",
+    "description": "Conjunctivitis Curse",
+    "link": "https://harrypotter.fandom.com/wiki/Conjunctivitis_Curse"
+  },
+  {
+    "name": "Cornflake skin spell",
+    "description": "Cornflake skin spell",
+    "link": "https://harrypotter.fandom.com/wiki/Cornflake_skin_spell"
+  },
+  {
+    "name": "Cracker Jinx",
+    "description": "Cracker Jinx",
+    "link": "https://harrypotter.fandom.com/wiki/Cracker_Jinx"
+  },
+  {
+    "name": "Cribbing Spell",
+    "description": "Cribbing Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Cribbing_Spell"
+  },
+  {
+    "name": "Crinus Muto",
+    "description": "Crinus Muto",
+    "link": "https://harrypotter.fandom.com/wiki/Crinus_Muto"
+  },
+  {
+    "name": "Crucio",
+    "description": "Cruciatus Curse",
+    "link": "https://harrypotter.fandom.com/wiki/Cruciatus_Curse"
+  },
+  {
+    "name": "Defodio",
+    "description": "Gouging Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Gouging_Spell"
+  },
+  {
+    "name": "Deletrius",
+    "description": "Eradication Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Eradication_Spell"
+  },
+  {
+    "name": "Densaugeo",
+    "description": "Densaugeo",
+    "link": "https://harrypotter.fandom.com/wiki/Densaugeo"
+  },
+  {
+    "name": "Deprimo",
+    "description": "Deprimo",
+    "link": "https://harrypotter.fandom.com/wiki/Deprimo"
+  },
+  {
+    "name": "Depulso",
+    "description": "Banishing Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Banishing_Charm"
+  },
+  {
+    "name": "Descendo",
+    "description": "Descending Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Descending_Charm"
+  },
+  {
+    "name": "Desk Into Pig",
+    "description": "Desk Into Pig",
+    "link": "https://harrypotter.fandom.com/wiki/Desk_Into_Pig"
+  },
+  {
+    "name": "Deterioration Hex",
+    "description": "Deterioration Hex",
+    "link": "https://harrypotter.fandom.com/wiki/Deterioration_Hex"
+  },
+  {
+    "name": "Diffindo",
+    "description": "Severing Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Severing_Charm"
+  },
+  {
+    "name": "Diminuendo",
+    "description": "Diminuendo",
+    "link": "https://harrypotter.fandom.com/wiki/Diminuendo"
+  },
+  {
+    "name": "Disintegration spell",
+    "description": "Disintegration spell",
+    "link": "https://harrypotter.fandom.com/wiki/Disintegration_spell"
+  },
+  {
+    "name": "Dissendium",
+    "description": "One-Eyed Witch Spell",
+    "link": "https://harrypotter.fandom.com/wiki/One-Eyed_Witch_Spell"
+  },
+  {
+    "name": "Disillusionment Charm",
+    "description": "Disillusionment Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Disillusionment_Charm"
+  },
+  {
+    "name": "Draconifors",
+    "description": "Draconifors Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Draconifors_Spell"
+  },
+  {
+    "name": "Drought Charm",
+    "description": "Drought Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Drought_Charm"
+  },
+  {
+    "name": "Ducklifors",
+    "description": "Ducklifors",
+    "link": "https://harrypotter.fandom.com/wiki/Ducklifors"
+  },
+  {
+    "name": "Duro",
+    "description": "Hardening Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Hardening_Charm"
+  },
+  {
+    "name": "Ears to kumquats spell",
+    "description": "Ears to kumquats spell",
+    "link": "https://harrypotter.fandom.com/wiki/Ears_to_kumquats_spell"
+  },
+  {
+    "name": "Ear-shrivelling Curse",
+    "description": "Ear-shrivelling Curse",
+    "link": "https://harrypotter.fandom.com/wiki/Ear-shrivelling_Curse"
+  },
+  {
+    "name": "Ebublio",
+    "description": "Ebublio Jinx",
+    "link": "https://harrypotter.fandom.com/wiki/Ebublio_Jinx"
+  },
+  {
+    "name": "Engorgio",
+    "description": "Engorgement Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Engorgement_Charm"
+  },
+  {
+    "name": "Engorgio Skullus",
+    "description": "Engorgio Skullus",
+    "link": "https://harrypotter.fandom.com/wiki/Engorgio_Skullus"
+  },
+  {
+    "name": "Entomorphis",
+    "description": "Insect Hex",
+    "link": "https://harrypotter.fandom.com/wiki/Insect_Hex"
+  },
+  {
+    "name": "Entrail-Expelling Curse",
+    "description": "Entrail-Expelling Curse",
+    "link": "https://harrypotter.fandom.com/wiki/Entrail-Expelling_Curse"
+  },
+  {
+    "name": "Episkey",
+    "description": "Episkey",
+    "link": "https://harrypotter.fandom.com/wiki/Episkey"
+  },
+  {
+    "name": "Epoximise",
+    "description": "Epoximise",
+    "link": "https://harrypotter.fandom.com/wiki/Epoximise"
+  },
+  {
+    "name": "Erecto",
+    "description": "Erecto",
+    "link": "https://harrypotter.fandom.com/wiki/Erecto"
+  },
+  {
+    "name": "Evanesce",
+    "description": "Evanesce",
+    "link": "https://harrypotter.fandom.com/wiki/Evanesce"
+  },
+  {
+    "name": "Evanesco",
+    "description": "Vanishing Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Vanishing_Spell"
+  },
+  {
+    "name": "Everte Statum",
+    "description": "Everte Statum",
+    "link": "https://harrypotter.fandom.com/wiki/Everte_Statum"
+  },
+  {
+    "name": "Expecto Patronum",
+    "description": "Patronus Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Patronus_Charm"
+  },
+  {
+    "name": "Expelliarmus",
+    "description": "Disarming Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Disarming_Charm"
+  },
+  {
+    "name": "Expulso",
+    "description": "Expulso Curse",
+    "link": "https://harrypotter.fandom.com/wiki/Expulso_Curse"
+  },
+  {
+    "name": "Extinguishing Spell",
+    "description": "Extinguishing Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Extinguishing_Spell"
+  },
+  {
+    "name": "False memory spell",
+    "description": "False memory spell",
+    "link": "https://harrypotter.fandom.com/wiki/False_memory_spell"
+  },
+  {
+    "name": "Feather-light charm",
+    "description": "Feather-light charm",
+    "link": "https://harrypotter.fandom.com/wiki/Feather-light_charm"
+  },
+  {
+    "name": "Ferret to human",
+    "description": "Ferret to human spell",
+    "link": "https://harrypotter.fandom.com/wiki/Ferret_to_human_spell"
+  },
+  {
+    "name": "Ferula",
+    "description": "Bandaging Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Bandaging_Charm"
+  },
+  {
+    "name": "Fianto Duri",
+    "description": "Fianto Duri",
+    "link": "https://harrypotter.fandom.com/wiki/Fianto_Duri"
+  },
+  {
+    "name": "Fidelius Charm",
+    "description": "Fidelius Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Fidelius_Charm"
+  },
+  {
+    "name": "Fiendfyre",
+    "description": "Fiendfyre",
+    "link": "https://harrypotter.fandom.com/wiki/Fiendfyre"
+  },
+  {
+    "name": "Finestra",
+    "description": "Finestra spell",
+    "link": "https://harrypotter.fandom.com/wiki/Finestra_spell"
+  },
+  {
+    "name": "Finite Incantatem",
+    "description": "General Counter-Spell",
+    "link": "https://harrypotter.fandom.com/wiki/General_Counter-Spell"
+  },
+  {
+    "name": "Finger-removing jinx",
+    "description": "Finger-removing jinx",
+    "link": "https://harrypotter.fandom.com/wiki/Finger-removing_jinx"
+  },
+  {
+    "name": "Firestorm",
+    "description": "Firestorm",
+    "link": "https://harrypotter.fandom.com/wiki/Firestorm"
+  },
+  {
+    "name": "Flagrante Curse",
+    "description": "Flagrante Curse",
+    "link": "https://harrypotter.fandom.com/wiki/Flagrante_Curse"
+  },
+  {
+    "name": "Flagrate",
+    "description": "Flagrate",
+    "link": "https://harrypotter.fandom.com/wiki/Flagrate"
+  },
+  {
+    "name": "Flame-Freezing Charm",
+    "description": "Flame-Freezing Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Flame-Freezing_Charm"
+  },
+  {
+    "name": "Flask-conjuring spell",
+    "description": "Flask-conjuring spell",
+    "link": "https://harrypotter.fandom.com/wiki/Flask-conjuring_spell"
+  },
+  {
+    "name": "Flintifors",
+    "description": "Flintifors",
+    "link": "https://harrypotter.fandom.com/wiki/Flintifors"
+  },
+  {
+    "name": "Flipendo",
+    "description": "Knockback Jinx",
+    "link": "https://harrypotter.fandom.com/wiki/Knockback_Jinx"
+  },
+  {
+    "name": "Flipendo Duo",
+    "description": "Knockback Jinx Duo",
+    "link": "https://harrypotter.fandom.com/wiki/Knockback_Jinx_Duo"
+  },
+  {
+    "name": "Flipendo Maxima",
+    "description": "Flipendo Maxima",
+    "link": "https://harrypotter.fandom.com/wiki/Flipendo_Maxima"
+  },
+  {
+    "name": "Flipendo Tria",
+    "description": "Flipendo Tria",
+    "link": "https://harrypotter.fandom.com/wiki/Flipendo_Tria"
+  },
+  {
+    "name": "Flying charm",
+    "description": "Flying charm",
+    "link": "https://harrypotter.fandom.com/wiki/Flying_charm"
+  },
+  {
+    "name": "Foundables Spell",
+    "description": "Foundables Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Foundables_Spell"
+  },
+  {
+    "name": "Fracto Strata",
+    "description": "Fracto Strata",
+    "link": "https://harrypotter.fandom.com/wiki/Fracto_Strata"
+  },
+  {
+    "name": "Fumos",
+    "description": "Smokescreen Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Smokescreen_Spell"
+  },
+  {
+    "name": "Fumos Duo",
+    "description": "Fumos Duo",
+    "link": "https://harrypotter.fandom.com/wiki/Fumos_Duo"
+  },
+  {
+    "name": "Furnunculus",
+    "description": "Pimple Jinx",
+    "link": "https://harrypotter.fandom.com/wiki/Pimple_Jinx"
+  },
+  {
+    "name": "Fur spell",
+    "description": "Fur spell",
+    "link": "https://harrypotter.fandom.com/wiki/Fur_spell"
+  },
+  {
+    "name": "Geminio",
+    "description": "Doubling Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Doubling_Charm"
+  },
+  {
+    "name": "Glacius",
+    "description": "Freezing Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Freezing_Spell"
+  },
+  {
+    "name": "Glacius Duo",
+    "description": "Glacius Duo",
+    "link": "https://harrypotter.fandom.com/wiki/Glacius_Duo"
+  },
+  {
+    "name": "Glacius Tria",
+    "description": "Glacius Tria",
+    "link": "https://harrypotter.fandom.com/wiki/Glacius_Tria"
+  },
+  {
+    "name": "Glisseo",
+    "description": "Glisseo",
+    "link": "https://harrypotter.fandom.com/wiki/Glisseo"
+  },
+  {
+    "name": "Green Sparks",
+    "description": "Green Sparks",
+    "link": "https://harrypotter.fandom.com/wiki/Green_Sparks"
+  },
+  {
+    "name": "Gripping Charm",
+    "description": "Gripping Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Gripping_Charm"
+  },
+  {
+    "name": "Growth Charm",
+    "description": "Growth Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Growth_Charm"
+  },
+  {
+    "name": "Gusts",
+    "description": "Gusts",
+    "link": "https://harrypotter.fandom.com/wiki/Gusts"
+  },
+  {
+    "name": "Gytrash-conjuring spell",
+    "description": "Gytrash-conjuring spell",
+    "link": "https://harrypotter.fandom.com/wiki/Gytrash-conjuring_spell"
+  },
+  {
+    "name": "Hair-thickening Charm",
+    "description": "Hair-thickening Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Hair-thickening_Charm"
+  },
+  {
+    "name": "Harmonia Nectere Passus",
+    "description": "Harmonia Nectere Passus",
+    "link": "https://harrypotter.fandom.com/wiki/Harmonia_Nectere_Passus"
+  },
+  {
+    "name": "Herbifors",
+    "description": "Herbifors",
+    "link": "https://harrypotter.fandom.com/wiki/Herbifors"
+  },
+  {
+    "name": "Herbivicus",
+    "description": "Herbivicus Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Herbivicus_Charm"
+  },
+  {
+    "name": "Hermione Granger's jinx",
+    "description": "Dumbledore's Army parchment jinx",
+    "link": "https://harrypotter.fandom.com/wiki/Dumbledore%27s_Army_parchment_jinx"
+  },
+  {
+    "name": "Homing spell",
+    "description": "Homing spell",
+    "link": "https://harrypotter.fandom.com/wiki/Homing_spell"
+  },
+  {
+    "name": "Homenum Revelio",
+    "description": "Human-presence-revealing spell",
+    "link": "https://harrypotter.fandom.com/wiki/Human-presence-revealing_spell"
+  },
+  {
+    "name": "Homonculous Charm",
+    "description": "Homonculous Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Homonculous_Charm"
+  },
+  {
+    "name": "Homorphus Charm",
+    "description": "Homorphus Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Homorphus_Charm"
+  },
+  {
+    "name": "Horn Tongue Hex",
+    "description": "Horn Tongue Hex",
+    "link": "https://harrypotter.fandom.com/wiki/Horn_Tongue_Hex"
+  },
+  {
+    "name": "Horton-Keitch Braking Charm",
+    "description": "Horton-Keitch Braking Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Horton-Keitch_Braking_Charm"
+  },
+  {
+    "name": "Horcrux-making spell",
+    "description": "Horcrux-making spell",
+    "link": "https://harrypotter.fandom.com/wiki/Horcrux-making_spell"
+  },
+  {
+    "name": "Hot Air Charm",
+    "description": "Hot Air Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Hot_Air_Charm"
+  },
+  {
+    "name": "Hour-Reversal Charm",
+    "description": "Hour-Reversal Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Hour-Reversal_Charm"
+  },
+  {
+    "name": "Hover Charm",
+    "description": "Hover Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Hover_Charm"
+  },
+  {
+    "name": "Hurling Hex",
+    "description": "Hurling Hex",
+    "link": "https://harrypotter.fandom.com/wiki/Hurling_Hex"
+  },
+  {
+    "name": "Ice Jinx",
+    "description": "Ice Jinx",
+    "link": "https://harrypotter.fandom.com/wiki/Ice_Jinx"
+  },
+  {
+    "name": "Illegibilus",
+    "description": "Illegibilus",
+    "link": "https://harrypotter.fandom.com/wiki/Illegibilus"
+  },
+  {
+    "name": "Immobulus",
+    "description": "Freezing Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Freezing_Charm"
+  },
+  {
+    "name": "Impedimenta",
+    "description": "Impediment Jinx",
+    "link": "https://harrypotter.fandom.com/wiki/Impediment_Jinx"
+  },
+  {
+    "name": "Imperio",
+    "description": "Imperius Curse",
+    "link": "https://harrypotter.fandom.com/wiki/Imperius_Curse"
+  },
+  {
+    "name": "Imperturbable Charm",
+    "description": "Imperturbable Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Imperturbable_Charm"
+  },
+  {
+    "name": "Impervius",
+    "description": "Impervius Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Impervius_Charm"
+  },
+  {
+    "name": "Inanimatus Conjurus",
+    "description": "Inanimatus Conjurus Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Inanimatus_Conjurus_Spell"
+  },
+  {
+    "name": "Incarcerous",
+    "description": "Incarcerous Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Incarcerous_Spell"
+  },
+  {
+    "name": "Incendio",
+    "description": "Fire-Making Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Fire-Making_Spell"
+  },
+  {
+    "name": "Incendio Duo",
+    "description": "Incendio Duo Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Incendio_Duo_Spell"
+  },
+  {
+    "name": "Incendio Tria",
+    "description": "Incendio Tria",
+    "link": "https://harrypotter.fandom.com/wiki/Incendio_Tria"
+  },
+  {
+    "name": "Inflamare",
+    "description": "Ignition Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Ignition_Spell"
+  },
+  {
+    "name": "Inflatus",
+    "description": "Inflating Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Inflating_Charm"
+  },
+  {
+    "name": "Informous",
+    "description": "Informous Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Informous_Spell"
+  },
+  {
+    "name": "Instant scalping hex",
+    "description": "Instant scalping hex",
+    "link": "https://harrypotter.fandom.com/wiki/Instant_scalping_hex"
+  },
+  {
+    "name": "Intruder Charm",
+    "description": "Intruder Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Intruder_Charm"
+  },
+  {
+    "name": "Jelly-Brain Jinx",
+    "description": "Jelly-Brain Jinx",
+    "link": "https://harrypotter.fandom.com/wiki/Jelly-Brain_Jinx"
+  },
+  {
+    "name": "Jelly-Fingers Curse",
+    "description": "Jelly-Fingers Curse",
+    "link": "https://harrypotter.fandom.com/wiki/Jelly-Fingers_Curse"
+  },
+  {
+    "name": "Knee-reversal hex",
+    "description": "Knee-reversal hex",
+    "link": "https://harrypotter.fandom.com/wiki/Knee-reversal_hex"
+  },
+  {
+    "name": "Knitting Charm",
+    "description": "Knitting Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Knitting_Charm"
+  },
+  {
+    "name": "Lacarnum Inflamari",
+    "description": "Lacarnum Inflamari",
+    "link": "https://harrypotter.fandom.com/wiki/Lacarnum_Inflamari"
+  },
+  {
+    "name": "Langlock",
+    "description": "Langlock",
+    "link": "https://harrypotter.fandom.com/wiki/Langlock"
+  },
+  {
+    "name": "Lapifors",
+    "description": "Lapifors Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Lapifors_Spell"
+  },
+  {
+    "name": "Leek Jinx",
+    "description": "Leek Jinx",
+    "link": "https://harrypotter.fandom.com/wiki/Leek_Jinx"
+  },
+  {
+    "name": "Legilimens",
+    "description": "Legilimency Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Legilimency_Spell"
+  },
+  {
+    "name": "Levicorpus",
+    "description": "Dangling Jinx",
+    "link": "https://harrypotter.fandom.com/wiki/Dangling_Jinx"
+  },
+  {
+    "name": "Levioso",
+    "description": "Levitation Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Levitation_Spell"
+  },
+  {
+    "name": "Liberacorpus",
+    "description": "Liberacorpus",
+    "link": "https://harrypotter.fandom.com/wiki/Liberacorpus"
+  },
+  {
+    "name": "Locomotor",
+    "description": "Locomotion Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Locomotion_Charm"
+  },
+  {
+    "name": "Locomotor Mortis",
+    "description": "Leg-Locker Curse",
+    "link": "https://harrypotter.fandom.com/wiki/Leg-Locker_Curse"
+  },
+  {
+    "name": "Locomotor Wibbly",
+    "description": "Jelly-Legs Curse",
+    "link": "https://harrypotter.fandom.com/wiki/Jelly-Legs_Curse"
+  },
+  {
+    "name": "Lumos",
+    "description": "Wand-Lighting Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Wand-Lighting_Charm"
+  },
+  {
+    "name": "Lumos Duo",
+    "description": "Lumos Duo",
+    "link": "https://harrypotter.fandom.com/wiki/Lumos_Duo"
+  },
+  {
+    "name": "Lumos Maxima",
+    "description": "Lumos Maxima",
+    "link": "https://harrypotter.fandom.com/wiki/Lumos_Maxima"
+  },
+  {
+    "name": "Lumos Solem",
+    "description": "Lumos Solem Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Lumos_Solem_Spell"
+  },
+  {
+    "name": "Magicus Extremos",
+    "description": "Magicus Extremos",
+    "link": "https://harrypotter.fandom.com/wiki/Magicus_Extremos"
+  },
+  {
+    "name": "Melofors",
+    "description": "Pumpkin-Head Jinx",
+    "link": "https://harrypotter.fandom.com/wiki/Pumpkin-Head_Jinx"
+  },
+  {
+    "name": "Meteolojinx recanto",
+    "description": "Meteolojinx recanto",
+    "link": "https://harrypotter.fandom.com/wiki/Meteolojinx_recanto"
+  },
+  {
+    "name": "Mimblewimble",
+    "description": "Tongue-Tying Curse",
+    "link": "https://harrypotter.fandom.com/wiki/Tongue-Tying_Curse"
+  },
+  {
+    "name": "Ministry of Magic Fog",
+    "description": "Ministry of Magic Fog",
+    "link": "https://harrypotter.fandom.com/wiki/Ministry_of_Magic_Fog"
+  },
+  {
+    "name": "Mobiliarbus",
+    "description": "Mobiliarbus",
+    "link": "https://harrypotter.fandom.com/wiki/Mobiliarbus"
+  },
+  {
+    "name": "Mobilicorpus",
+    "description": "Mobilicorpus",
+    "link": "https://harrypotter.fandom.com/wiki/Mobilicorpus"
+  },
+  {
+    "name": "Molliare",
+    "description": "Cushioning Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Cushioning_Charm"
+  },
+  {
+    "name": "Morsmordre",
+    "description": "Morsmordre",
+    "link": "https://harrypotter.fandom.com/wiki/Morsmordre"
+  },
+  {
+    "name": "Mucus ad Nauseam",
+    "description": "Curse of the Bogies",
+    "link": "https://harrypotter.fandom.com/wiki/Curse_of_the_Bogies"
+  },
+  {
+    "name": "Muffliato",
+    "description": "Muffliato Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Muffliato_Charm"
+  },
+  {
+    "name": "Multicorfors",
+    "description": "Multicorfors Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Multicorfors_Spell"
+  },
+  {
+    "name": "Mutatio Skullus",
+    "description": "Mutatio Skullus",
+    "link": "https://harrypotter.fandom.com/wiki/Mutatio_Skullus"
+  },
+  {
+    "name": "Nox",
+    "description": "Wand-Extinguishing Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Wand-Extinguishing_Charm"
+  },
+  {
+    "name": "Nebulus",
+    "description": "Fogging Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Fogging_Spell"
+  },
+  {
+    "name": "Oculus Reparo",
+    "description": "Oculus Reparo",
+    "link": "https://harrypotter.fandom.com/wiki/Oculus_Reparo"
+  },
+  {
+    "name": "Obliteration Charm",
+    "description": "Obliteration Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Obliteration_Charm"
+  },
+  {
+    "name": "Obliviate",
+    "description": "Memory Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Memory_Charm"
+  },
+  {
+    "name": "Obscuro",
+    "description": "Obscuro",
+    "link": "https://harrypotter.fandom.com/wiki/Obscuro"
+  },
+  {
+    "name": "Oppugno",
+    "description": "Oppugno Jinx",
+    "link": "https://harrypotter.fandom.com/wiki/Oppugno_Jinx"
+  },
+  {
+    "name": "Orbis",
+    "description": "Orbis",
+    "link": "https://harrypotter.fandom.com/wiki/Orbis"
+  },
+  {
+    "name": "Orchideous",
+    "description": "Bouquet Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Bouquet_Spell"
+  },
+  {
+    "name": "Oscausi",
+    "description": "Oscausi",
+    "link": "https://harrypotter.fandom.com/wiki/Oscausi"
+  },
+  {
+    "name": "Pack",
+    "description": "Pack Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Pack_Charm"
+  },
+  {
+    "name": "Pain extraction spell",
+    "description": "Pain extraction spell",
+    "link": "https://harrypotter.fandom.com/wiki/Pain_extraction_spell"
+  },
+  {
+    "name": "Papyrus Reparo",
+    "description": "Papyrus Reparo",
+    "link": "https://harrypotter.fandom.com/wiki/Papyrus_Reparo"
+  },
+  {
+    "name": "Patented Daydream Charm",
+    "description": "Patented Daydream Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Patented_Daydream_Charm"
+  },
+  {
+    "name": "Partis Temporus",
+    "description": "Partis Temporus",
+    "link": "https://harrypotter.fandom.com/wiki/Partis_Temporus"
+  },
+  {
+    "name": "Pepper Breath",
+    "description": "Pepper Breath",
+    "link": "https://harrypotter.fandom.com/wiki/Pepper_Breath"
+  },
+  {
+    "name": "Periculum",
+    "description": "Periculum",
+    "link": "https://harrypotter.fandom.com/wiki/Periculum"
+  },
+  {
+    "name": "Permanent Sticking Charm",
+    "description": "Permanent Sticking Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Permanent_Sticking_Charm"
+  },
+  {
+    "name": "Peskipiksi Pesternomi",
+    "description": "Peskipiksi Pesternomi",
+    "link": "https://harrypotter.fandom.com/wiki/Peskipiksi_Pesternomi"
+  },
+  {
+    "name": "Petrificus Totalus",
+    "description": "Full Body-Bind Curse",
+    "link": "https://harrypotter.fandom.com/wiki/Full_Body-Bind_Curse"
+  },
+  {
+    "name": "Piertotum Locomotor",
+    "description": "Animation Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Animation_Charm"
+  },
+  {
+    "name": "Piscifors",
+    "description": "Piscifors",
+    "link": "https://harrypotter.fandom.com/wiki/Piscifors"
+  },
+  {
+    "name": "Placement Charm",
+    "description": "Placement Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Placement_Charm"
+  },
+  {
+    "name": "Point Me",
+    "description": "Four-Point Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Four-Point_Spell"
+  },
+  {
+    "name": "Portus",
+    "description": "Portkey Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Portkey_Spell"
+  },
+  {
+    "name": "Prior Incantato",
+    "description": "Reverse Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Reverse_Spell"
+  },
+  {
+    "name": "Proficiency Charm",
+    "description": "Proficiency Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Proficiency_Charm"
+  },
+  {
+    "name": "Protean Charm",
+    "description": "Protean Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Protean_Charm"
+  },
+  {
+    "name": "Protection Charm",
+    "description": "Protection Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Protection_Charm"
+  },
+  {
+    "name": "Protego",
+    "description": "Shield Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Shield_Charm"
+  },
+  {
+    "name": "Protego Diabolica",
+    "description": "Protego Diabolica",
+    "link": "https://harrypotter.fandom.com/wiki/Protego_Diabolica"
+  },
+  {
+    "name": "Protego horribilis",
+    "description": "Protego horribilis",
+    "link": "https://harrypotter.fandom.com/wiki/Protego_horribilis"
+  },
+  {
+    "name": "Protego Maxima",
+    "description": "Protego Maxima",
+    "link": "https://harrypotter.fandom.com/wiki/Protego_Maxima"
+  },
+  {
+    "name": "Protego totalum",
+    "description": "Protego totalum",
+    "link": "https://harrypotter.fandom.com/wiki/Protego_totalum"
+  },
+  {
+    "name": "Pullus",
+    "description": "Pullus",
+    "link": "https://harrypotter.fandom.com/wiki/Pullus"
+  },
+  {
+    "name": "Purple Firecrackers",
+    "description": "Purple Firecrackers",
+    "link": "https://harrypotter.fandom.com/wiki/Purple_Firecrackers"
+  },
+  {
+    "name": "Pus Squirting Hex",
+    "description": "Pus Squirting Hex",
+    "link": "https://harrypotter.fandom.com/wiki/Pus_Squirting_Hex"
+  },
+  {
+    "name": "Quietus",
+    "description": "Quietening Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Quietening_Charm"
+  },
+  {
+    "name": "Redactum Skullus",
+    "description": "Head Shrink Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Head_Shrink_Spell"
+  },
+  {
+    "name": "Reducio",
+    "description": "Shrinking Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Shrinking_Charm"
+  },
+  {
+    "name": "Reducto",
+    "description": "Reductor Curse",
+    "link": "https://harrypotter.fandom.com/wiki/Reductor_Curse"
+  },
+  {
+    "name": "Refilling Charm",
+    "description": "Refilling Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Refilling_Charm"
+  },
+  {
+    "name": "Reparifors",
+    "description": "Reparifors",
+    "link": "https://harrypotter.fandom.com/wiki/Reparifors"
+  },
+  {
+    "name": "Reverte",
+    "description": "Reverte",
+    "link": "https://harrypotter.fandom.com/wiki/Reverte"
+  },
+  {
+    "name": "Relashio",
+    "description": "Revulsion Jinx",
+    "link": "https://harrypotter.fandom.com/wiki/Revulsion_Jinx"
+  },
+  {
+    "name": "Rennervate",
+    "description": "Reviving Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Reviving_Spell"
+  },
+  {
+    "name": "Reparifarge",
+    "description": "Reparifarge",
+    "link": "https://harrypotter.fandom.com/wiki/Reparifarge"
+  },
+  {
+    "name": "Reparo",
+    "description": "Mending Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Mending_Charm"
+  },
+  {
+    "name": "Repello Muggletum",
+    "description": "Muggle-Repelling Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Muggle-Repelling_Charm"
+  },
+  {
+    "name": "Repello Inimicum",
+    "description": "Repello Inimicum",
+    "link": "https://harrypotter.fandom.com/wiki/Repello_Inimicum"
+  },
+  {
+    "name": "Revelio",
+    "description": "Revelio Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Revelio_Charm"
+  },
+  {
+    "name": "Reversis",
+    "description": "Reversis",
+    "link": "https://harrypotter.fandom.com/wiki/Reversis"
+  },
+  {
+    "name": "Rictusempra",
+    "description": "Tickling Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Tickling_Charm"
+  },
+  {
+    "name": "Riddikulus",
+    "description": "Boggart-Banishing Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Boggart-Banishing_Spell"
+  },
+  {
+    "name": "Rose Growth",
+    "description": "Rose Growth",
+    "link": "https://harrypotter.fandom.com/wiki/Rose_Growth"
+  },
+  {
+    "name": "Rowboat spell",
+    "description": "Rowboat spell",
+    "link": "https://harrypotter.fandom.com/wiki/Rowboat_spell"
+  },
+  {
+    "name": "Salvio hexia",
+    "description": "Salvio hexia",
+    "link": "https://harrypotter.fandom.com/wiki/Salvio_hexia"
+  },
+  {
+    "name": "Sardine Hex",
+    "description": "Sardine Hex",
+    "link": "https://harrypotter.fandom.com/wiki/Sardine_Hex"
+  },
+  {
+    "name": "Sauce-making spell",
+    "description": "Sauce-making spell",
+    "link": "https://harrypotter.fandom.com/wiki/Sauce-making_spell"
+  },
+  {
+    "name": "Scourgify",
+    "description": "Scouring Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Scouring_Charm"
+  },
+  {
+    "name": "Sealant Charm",
+    "description": "Sealant Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Sealant_Charm"
+  },
+  {
+    "name": "Sea urchin jinx",
+    "description": "Sea urchin jinx",
+    "link": "https://harrypotter.fandom.com/wiki/Sea_urchin_jinx"
+  },
+  {
+    "name": "Sectumsempra",
+    "description": "Laceration Curse",
+    "link": "https://harrypotter.fandom.com/wiki/Laceration_Curse"
+  },
+  {
+    "name": "Shield penetration spell",
+    "description": "Shield penetration spell",
+    "link": "https://harrypotter.fandom.com/wiki/Shield_penetration_spell"
+  },
+  {
+    "name": "Shooting Spell",
+    "description": "Shooting spell",
+    "link": "https://harrypotter.fandom.com/wiki/Shooting_spell"
+  },
+  {
+    "name": "Slowing Charm",
+    "description": "Slowing Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Slowing_Charm"
+  },
+  {
+    "name": "Smashing spell",
+    "description": "Smashing spell",
+    "link": "https://harrypotter.fandom.com/wiki/Smashing_spell"
+  },
+  {
+    "name": "Serpensortia",
+    "description": "Snake Summons Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Snake_Summons_Spell"
+  },
+  {
+    "name": "Silencio",
+    "description": "Silencing Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Silencing_Charm"
+  },
+  {
+    "name": "Skurge",
+    "description": "Skurge Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Skurge_Charm"
+  },
+  {
+    "name": "Slippery Jinx",
+    "description": "Slippery Jinx",
+    "link": "https://harrypotter.fandom.com/wiki/Slippery_Jinx"
+  },
+  {
+    "name": "Slugulus Eructo",
+    "description": "Slug-vomiting Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Slug-vomiting_Charm"
+  },
+  {
+    "name": "Sonorous Charm",
+    "description": "Sonorous Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Sonorous_Charm"
+  },
+  {
+    "name": "Sonorus",
+    "description": "Amplifying Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Amplifying_Charm"
+  },
+  {
+    "name": "Specialis Revelio",
+    "description": "Specialis Revelio",
+    "link": "https://harrypotter.fandom.com/wiki/Specialis_Revelio"
+  },
+  {
+    "name": "Sponge-Knees Curse",
+    "description": "Sponge-Knees Curse",
+    "link": "https://harrypotter.fandom.com/wiki/Sponge-Knees_Curse"
+  },
+  {
+    "name": "Spongify",
+    "description": "Softening Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Softening_Charm"
+  },
+  {
+    "name": "Squiggle Quill",
+    "description": "Squiggle Quill",
+    "link": "https://harrypotter.fandom.com/wiki/Squiggle_Quill"
+  },
+  {
+    "name": "Stamina Charm",
+    "description": "Stamina Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Stamina_Charm"
+  },
+  {
+    "name": "Stealth Sensoring Spell",
+    "description": "Stealth Sensoring Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Stealth_Sensoring_Spell"
+  },
+  {
+    "name": "Sternius",
+    "description": "Sternius",
+    "link": "https://harrypotter.fandom.com/wiki/Sternius"
+  },
+  {
+    "name": "Stinging Jinx",
+    "description": "Stinging Jinx",
+    "link": "https://harrypotter.fandom.com/wiki/Stinging_Jinx"
+  },
+  {
+    "name": "Stretching Jinx",
+    "description": "Stretching Jinx",
+    "link": "https://harrypotter.fandom.com/wiki/Stretching_Jinx"
+  },
+  {
+    "name": "Stupefy",
+    "description": "Stunning Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Stunning_Spell"
+  },
+  {
+    "name": "Supersensory Charm",
+    "description": "Supersensory Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Supersensory_Charm"
+  },
+  {
+    "name": "Surgito",
+    "description": "Surgito",
+    "link": "https://harrypotter.fandom.com/wiki/Surgito"
+  },
+  {
+    "name": "Switching Spell",
+    "description": "Switching Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Switching_Spell"
+  },
+  {
+    "name": "Taboo",
+    "description": "Taboo",
+    "link": "https://harrypotter.fandom.com/wiki/Taboo"
+  },
+  {
+    "name": "Tail-growing spell",
+    "description": "Tail-growing spell",
+    "link": "https://harrypotter.fandom.com/wiki/Tail-growing_spell"
+  },
+  {
+    "name": "Tarantallegra",
+    "description": "Dancing Feet Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Dancing_Feet_Spell"
+  },
+  {
+    "name": "Teacup to tortoise",
+    "description": "Teacup to tortoise spell",
+    "link": "https://harrypotter.fandom.com/wiki/Teacup_to_tortoise_spell"
+  },
+  {
+    "name": "Teapot to tortoise",
+    "description": "Teapot to tortoise spell",
+    "link": "https://harrypotter.fandom.com/wiki/Teapot_to_tortoise_spell"
+  },
+  {
+    "name": "Teeth-straightening spell",
+    "description": "Teeth-straightening spell",
+    "link": "https://harrypotter.fandom.com/wiki/Teeth-straightening_spell"
+  },
+  {
+    "name": "Teleportation Spell",
+    "description": "Teleportation spell",
+    "link": "https://harrypotter.fandom.com/wiki/Teleportation_spell"
+  },
+  {
+    "name": "Tentaclifors",
+    "description": "Tentaclifors",
+    "link": "https://harrypotter.fandom.com/wiki/Tentaclifors"
+  },
+  {
+    "name": "Tergeo",
+    "description": "Wiping Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Wiping_Spell"
+  },
+  {
+    "name": "Titillando",
+    "description": "Tickling Hex",
+    "link": "https://harrypotter.fandom.com/wiki/Tickling_Hex"
+  },
+  {
+    "name": "Toenail-growing hex",
+    "description": "Toenail-growing hex",
+    "link": "https://harrypotter.fandom.com/wiki/Toenail-growing_hex"
+  },
+  {
+    "name": "Transmogrifian Torture",
+    "description": "Transmogrifian Torture",
+    "link": "https://harrypotter.fandom.com/wiki/Transmogrifian_Torture"
+  },
+  {
+    "name": "Tribuomnus",
+    "description": "Inn Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Inn_Charm"
+  },
+  {
+    "name": "Trip Jinx",
+    "description": "Trip Jinx",
+    "link": "https://harrypotter.fandom.com/wiki/Trip_Jinx"
+  },
+  {
+    "name": "Twitchy-Ears Hex",
+    "description": "Twitchy-Ears Hex",
+    "link": "https://harrypotter.fandom.com/wiki/Twitchy-Ears_Hex"
+  },
+  {
+    "name": "Unbreakable Charm",
+    "description": "Unbreakable Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Unbreakable_Charm"
+  },
+  {
+    "name": "Unbreakable Vow",
+    "description": "Unbreakable Vow",
+    "link": "https://harrypotter.fandom.com/wiki/Unbreakable_Vow"
+  },
+  {
+    "name": "Unsupported flight",
+    "description": "Unsupported flight",
+    "link": "https://harrypotter.fandom.com/wiki/Unsupported_flight"
+  },
+  {
+    "name": "Vacuum cleaner spell",
+    "description": "Vacuum cleaner spell",
+    "link": "https://harrypotter.fandom.com/wiki/Vacuum_cleaner_spell"
+  },
+  {
+    "name": "Ventus",
+    "description": "Windy Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Windy_Spell"
+  },
+  {
+    "name": "Ventus Duo",
+    "description": "Ventus Duo",
+    "link": "https://harrypotter.fandom.com/wiki/Ventus_Duo"
+  },
+  {
+    "name": "Vera Verto",
+    "description": "Vera Verto",
+    "link": "https://harrypotter.fandom.com/wiki/Vera_Verto"
+  },
+  {
+    "name": "Verdillious",
+    "description": "Verdillious",
+    "link": "https://harrypotter.fandom.com/wiki/Verdillious"
+  },
+  {
+    "name": "Verdimillious",
+    "description": "Verdimillious Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Verdimillious_Charm"
+  },
+  {
+    "name": "Verdimillious Duo",
+    "description": "Verdimillious Duo Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Verdimillious_Duo_Spell"
+  },
+  {
+    "name": "Vermiculus",
+    "description": "Vermiculus",
+    "link": "https://harrypotter.fandom.com/wiki/Vermiculus"
+  },
+  {
+    "name": "Vermillious",
+    "description": "Red Sparks",
+    "link": "https://harrypotter.fandom.com/wiki/Red_Sparks"
+  },
+  {
+    "name": "Versis",
+    "description": "Versis",
+    "link": "https://harrypotter.fandom.com/wiki/Versis"
+  },
+  {
+    "name": "Victor Rookwood's curse",
+    "description": "Victor Rookwood's curse",
+    "link": "https://harrypotter.fandom.com/wiki/Victor_Rookwood%27s_curse"
+  },
+  {
+    "name": "Vipera Evanesca",
+    "description": "Snake-Vanishing Spell",
+    "link": "https://harrypotter.fandom.com/wiki/Snake-Vanishing_Spell"
+  },
+  {
+    "name": "Vulnera Sanentur",
+    "description": "Vulnera Sanentur",
+    "link": "https://harrypotter.fandom.com/wiki/Vulnera_Sanentur"
+  },
+  {
+    "name": "Waddiwasi",
+    "description": "Projectile Jinx",
+    "link": "https://harrypotter.fandom.com/wiki/Projectile_Jinx"
+  },
+  {
+    "name": "Washing up spell",
+    "description": "Washing up spell",
+    "link": "https://harrypotter.fandom.com/wiki/Washing_up_spell"
+  },
+  {
+    "name": "Weight-loss charms",
+    "description": "Weight-loss charms",
+    "link": "https://harrypotter.fandom.com/wiki/Weight-loss_charms"
+  },
+  {
+    "name": "Wingardium Leviosa",
+    "description": "Levitation Charm",
+    "link": "https://harrypotter.fandom.com/wiki/Levitation_Charm"
+  },
+  {
+    "name": "White sparks",
+    "description": "White sparks",
+    "link": "https://harrypotter.fandom.com/wiki/White_sparks"
+  }
+]
