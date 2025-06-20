@@ -1,5 +1,6 @@
 import json
 import os
+import random
 import re
 import string
 import sys
@@ -293,11 +294,22 @@ class SparkleOverlay(QWidget):
 
     def update_sparkles(self):
         now = time.time()
-        self.sparkles = [(x, y, t) for x, y, t in self.sparkles if now - t < 0.5]
+        self.sparkles = [
+            (x, y, t, color) for x, y, t, color in self.sparkles if now - t < 0.5
+        ]
         self.update()
 
     def add_sparkle(self, x, y):
-        self.sparkles.append((x, y, time.time()))
+        # Soft magical hues
+        colors = [
+            QColor(255, 223, 0),  # gold
+            QColor(173, 216, 230),  # light blue
+            QColor(255, 182, 193),  # pink
+            QColor(144, 238, 144),  # pale green
+            QColor(221, 160, 221),  # lavender
+        ]
+        color = random.choice(colors)
+        self.sparkles.append((x, y, time.time(), color))
 
     def trigger_sparkle(self, pos):
         self.add_sparkle(pos.x(), pos.y())
@@ -307,10 +319,11 @@ class SparkleOverlay(QWidget):
         painter = QPainter(self)
         painter.setRenderHint(QPainter.RenderHint.Antialiasing)
         now = time.time()
-        for x, y, t in self.sparkles:
+        for x, y, t, color in self.sparkles:
             alpha = int(255 * (1 - (now - t) / 0.5))
-            color = QColor(255, 223, 0, alpha)  # Golden sparkle
-            painter.setBrush(color)
+            c = QColor(color)
+            c.setAlpha(alpha)
+            painter.setBrush(c)
             painter.setPen(Qt.PenStyle.NoPen)
             painter.drawEllipse(QPoint(int(x), int(y)), 4, 4)
 
