@@ -9,7 +9,7 @@ import time
 import requests
 from bs4 import BeautifulSoup
 from PyQt6.QtCore import QPoint, Qt, QTimer
-from PyQt6.QtGui import QColor, QIcon, QMouseEvent, QPainter
+from PyQt6.QtGui import QColor, QIcon, QPainter
 from PyQt6.QtWidgets import (
     QApplication,
     QHBoxLayout,
