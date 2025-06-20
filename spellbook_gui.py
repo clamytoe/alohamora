@@ -172,7 +172,19 @@ class SpellBook(QWidget):
         aside = dict(zip(names, values))
 
         return f"""
+            <html><body style="background-color: #fdf6e3;">
             <h1 align="center">{name}</h1>
+            <div style="text-align: center; margin-bottom: 10px;">
+                <div style="
+                    display: inline-block;
+                    padding: 6px;
+                    border: 2px solid #8B4513;
+                    background-color: #fdf6e3;
+                    box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+                    border-radius: 8px;">
+                    {aside.get("Hand movement", "")}
+                </div>
+            </div>
             <h2>{spell['description']}</h2>
             <p>
                 <table>
@@ -183,10 +195,6 @@ class SpellBook(QWidget):
                     <tr>
                         <th align="right">Type</th>
                         <td style="padding-left: 10px;">{aside.get("Type", "")}</td>
-                    </tr>
-                    <tr>
-                        <th align="right">Hand movement</th>
-                        <td style="padding-left: 10px;">{aside.get("Hand movement", "")}</td>
                     </tr>
                     <tr>
                         <th align="right">Light</th>
@@ -201,6 +209,7 @@ class SpellBook(QWidget):
             <hr>
             <p>{para or '<i>No summary found on page.</i>'}</p>
             <p><a href="{link}">View More</a></p>
+            </body></html>
         """
 
     def filter_across_tabs(self, text):
