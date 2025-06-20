@@ -117,3 +117,4 @@ ENV/
 *.html
 *.ipynb
 *data/
+*.afphoto
