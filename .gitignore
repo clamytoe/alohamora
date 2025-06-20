@@ -115,3 +115,5 @@ ENV/
 # misc
 *.pdf
 *.html
+*.ipynb
+*data/
