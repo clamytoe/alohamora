@@ -1,11 +1,10 @@
 import json
 import string
 import sys
+import webbrowser
 
 from PyQt6.QtWidgets import (
     QApplication,
-    QHBoxLayout,
-    QLabel,
     QLineEdit,
     QListWidget,
     QListWidgetItem,
@@ -22,7 +21,6 @@ class SpellBook(QWidget):
         self.setWindowTitle("Hogwarts Spellbook")
         self.resize(600, 500)
 
-        self.spells_by_letter = spells_by_letter
         self.tabs = QTabWidget()
         self.search_bar = QLineEdit()
         self.search_bar.setPlaceholderText("Search for a spell…")
@@ -31,23 +29,40 @@ class SpellBook(QWidget):
         layout.addWidget(self.search_bar)
         layout.addWidget(self.tabs)
 
-        self.list_widgets = {}  # Track widgets and data
+        self.spells_by_letter = spells_by_letter
+        self.all_spells = [s for spells in spells_by_letter.values() for s in spells]
+        self.list_widgets = {}
 
         for letter in string.ascii_uppercase:
             tab = QWidget()
-            tab_layout = QVBoxLayout(tab)
+            layout_tab = QVBoxLayout(tab)
             list_widget = QListWidget()
 
             spells = spells_by_letter.get(letter, [])
             for spell in spells:
                 item = QListWidgetItem(f"{spell['name']} — {spell['description']}")
+                item.setToolTip(spell["link"] or "No link available")
                 list_widget.addItem(item)
 
-            tab_layout.addWidget(list_widget)
+            layout_tab.addWidget(list_widget)
             self.tabs.addTab(tab, letter)
             self.list_widgets[letter] = (list_widget, spells)
 
+            list_widget.itemDoubleClicked.connect(
+                self.create_double_click_handler(spells)
+            )
+
         self.search_bar.textChanged.connect(self.filter_across_tabs)
+
+    def create_double_click_handler(self, spell_list):
+        def handler(item):
+            name = item.text().split(" — ")[0]
+            for spell in spell_list:
+                if spell["name"] == name and spell.get("link"):
+                    webbrowser.open(spell["link"])
+                    break
+
+        return handler
 
     def filter_across_tabs(self, text):
         text = text.strip().lower()
@@ -55,35 +70,31 @@ class SpellBook(QWidget):
             self.reset_all_tabs()
             return
 
-        # Flatten spell names and mapping
-        all_spells = [s for spells in self.spells_by_letter.values() for s in spells]
-        spell_name_map = {s["name"]: s for s in all_spells}
-
-        # Perform fuzzy matching
+        # Use fuzzy matching for broader suggestions
+        spell_name_map = {s["name"]: s for s in self.all_spells}
         matches = process.extract(
             query=text,
             choices=list(spell_name_map.keys()),
-            scorer=fuzz.WRatio,  # Weighted ratio gives better mixed accuracy
+            scorer=fuzz.WRatio,
             limit=5,
             score_cutoff=65,
         )
-
-        matched_names = [m[0] for m in matches]
-        matched_lower = set(name.lower() for name in matched_names)
+        matched_names = set(name.lower() for name, _, _ in matches)
 
         first_exact = None
-        for letter, (list_widget, spell_list) in self.list_widgets.items():
+        for _, (list_widget, spell_list) in self.list_widgets.items():
             list_widget.clear()
             filtered = [
                 s
                 for s in spell_list
                 if s["name"].lower().startswith(text)
-                or s["name"] in matched_names
-                or s["name"].lower() in matched_lower
+                or s["name"].lower() in matched_names
             ]
             for spell in filtered:
                 item = QListWidgetItem(f"{spell['name']} — {spell['description']}")
+                item.setToolTip(spell["link"] or "No link available")
                 list_widget.addItem(item)
+
                 if not first_exact and spell["name"].lower().startswith(text):
                     first_exact = spell
 
@@ -93,12 +104,12 @@ class SpellBook(QWidget):
             self.tabs.setCurrentIndex(index)
 
     def reset_all_tabs(self):
-        for letter, (list_widget, all_spells) in self.list_widgets.items():
+        for letter, (list_widget, spell_list) in self.list_widgets.items():
             list_widget.clear()
-            for spell in all_spells:
-                list_widget.addItem(
-                    QListWidgetItem(f"{spell['name']} — {spell['description']}")
-                )
+            for spell in spell_list:
+                item = QListWidgetItem(f"{spell['name']} — {spell['description']}")
+                item.setToolTip(spell["link"] or "No link available")
+                list_widget.addItem(item)
 
 
 def load_spells(filename="spells.json"):
