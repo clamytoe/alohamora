@@ -56,6 +56,8 @@ class SpellBook(QWidget):
         self.sparkle_overlay = SparkleOverlay(self.preview.viewport())
         self.preview.viewport().installEventFilter(self)
         self.preview.viewport().setMouseTracking(True)
+        # self.preview.anchorHovered.connect(self.handle_link_hover)
+        # self.preview.anchorHovered[str].connect(self.handle_link_hover)
         self.sparkle_overlay.resize(self.preview.viewport().size())
         self.sparkle_overlay.show()
         self.preview.setOpenExternalLinks(True)
@@ -89,10 +91,22 @@ class SpellBook(QWidget):
 
         self.search_bar.textChanged.connect(self.filter_across_tabs)
 
-        wand_pixmap = QPixmap("images/wand-cursor.png")
-        wand_cursor = QCursor(wand_pixmap, 0, 0)
-        self.sparkle_overlay.setCursor(wand_cursor)
+        self.wand_cursor = self.create_wand_cursor("wand-cursor.png")
+        self.glowing_wand_cursor = self.create_wand_cursor("glowing-wand-cursor.png")
+
+        self.preview.viewport().setCursor(self.wand_cursor)
         self.search_bar.setFocus()
+
+    def create_wand_cursor(self, wand_name):
+        cursor_path = os.path.join(os.path.dirname(__file__), "images", wand_name)
+        wand_pixmap = QPixmap(cursor_path).scaled(
+            32,
+            32,
+            Qt.AspectRatioMode.KeepAspectRatio,
+            Qt.TransformationMode.SmoothTransformation,
+        )
+        wand_cursor = QCursor(wand_pixmap, 0, 0)
+        return wand_cursor
 
     def create_single_click_handler(self, spell_list):
         def handler(item):
@@ -107,6 +121,13 @@ class SpellBook(QWidget):
 
     def eventFilter(self, source, event):
         if source == self.preview.viewport() and event.type() == event.Type.MouseMove:
+            cursor = self.preview.cursorForPosition(event.position().toPoint())
+            fmt = cursor.charFormat()
+            if fmt.isAnchor():
+                self.preview.viewport().setCursor(self.glowing_wand_cursor)
+            else:
+                self.preview.viewport().setCursor(self.wand_cursor)
+
             self.sparkle_overlay.trigger_sparkle(event.position())
         return super().eventFilter(source, event)
 
@@ -264,6 +285,12 @@ class SpellBook(QWidget):
             index = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".index(first_letter)
             self.tabs.setCurrentIndex(index)
 
+    def handle_link_hover(self, link):
+        if link:
+            self.preview.viewport().setCursor(self.glowing_wand_cursor)
+        else:
+            self.preview.viewport().setCursor(self.wand_cursor)
+
     def reset_all_tabs(self):
         for letter, (list_widget, spell_list) in self.list_widgets.items():
             list_widget.clear()
@@ -306,11 +333,11 @@ class SparkleOverlay(QWidget):
     def add_sparkle(self, x, y):
         # Soft magical hues
         colors = [
-            QColor(255, 223, 0),  # gold
-            QColor(173, 216, 230),  # light blue
-            QColor(255, 182, 193),  # pink
-            QColor(144, 238, 144),  # pale green
-            QColor(221, 160, 221),  # lavender
+            QColor(255, 223, 0, 255),  # gold
+            QColor(173, 216, 230, 255),  # light blue
+            QColor(255, 182, 193, 255),  # pink
+            QColor(144, 238, 144, 255),  # pale green
+            QColor(221, 160, 221, 255),  # lavender
         ]
         color = random.choice(colors)
         self.sparkles.append((x, y, time.time(), color))
