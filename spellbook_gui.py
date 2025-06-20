@@ -6,8 +6,6 @@ import sys
 
 import requests
 from bs4 import BeautifulSoup
-
-# from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import (
     QApplication,
     QHBoxLayout,
@@ -99,7 +97,9 @@ class SpellBook(QWidget):
                 with open(filename, "w", encoding="utf-8") as f:
                     f.write(resp.text)
             except Exception:
-                return f"<b>{name}</b><br>{spell['description']}<br><br><i>Failed to fetch page.</i>"
+                err = f"<b>{name}</b><br>{spell['description']}<br>"
+                err += "<br><i>Failed to fetch page.</i>"
+                return err
 
         with open(filename, encoding="utf-8") as f:
             soup = BeautifulSoup(f, "html.parser")
@@ -139,7 +139,7 @@ class SpellBook(QWidget):
                 s
                 for s in spell_list
                 if s["name"].lower().startswith(text)
-                or s["name"].lower() in matched_names
+                or s["name"].lower() in matched_names  # noqa
             ]
             for spell in filtered:
                 item = QListWidgetItem(f"{spell['name']} — {spell['description']}")
