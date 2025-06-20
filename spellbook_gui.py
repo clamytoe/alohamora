@@ -54,7 +54,7 @@ class SpellBook(QWidget):
 
         self.preview = QTextBrowser()
         self.sparkle_overlay = SparkleOverlay(self.preview.viewport())
-        self.preview.viewport().installEventFilter(self.sparkle_overlay)
+        self.preview.viewport().installEventFilter(self)
         self.preview.viewport().setMouseTracking(True)
         self.sparkle_overlay.resize(self.preview.viewport().size())
         self.sparkle_overlay.show()
@@ -99,6 +99,11 @@ class SpellBook(QWidget):
                     break
 
         return handler
+
+    def eventFilter(self, source, event):
+        if source == self.preview.viewport() and event.type() == event.Type.MouseMove:
+            self.sparkle_overlay.trigger_sparkle(event.position())
+        return super().eventFilter(source, event)
 
     def get_spell_summary(self, spell):
         name = spell["name"]
@@ -293,10 +298,10 @@ class SparkleOverlay(QWidget):
 
     def add_sparkle(self, x, y):
         self.sparkles.append((x, y, time.time()))
-        print(f"✨ Sparkle at ({x:.1f}, {y:.1f})")
 
-    def mouseMoveEvent(self, event: QMouseEvent):
-        self.add_sparkle(event.position().x(), event.position().y())
+    def trigger_sparkle(self, pos):
+        self.add_sparkle(pos.x(), pos.y())
+        # print(f"✨ Sparkle at {pos.x():.1f}, {pos.y():.1f}")
 
     def paintEvent(self, event):
         painter = QPainter(self)
