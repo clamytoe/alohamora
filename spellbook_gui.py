@@ -3,14 +3,14 @@ import os
 import re
 import string
 import sys
+import time
 
 import requests
 from bs4 import BeautifulSoup
-from PyQt6.QtCore import QPropertyAnimation
-from PyQt6.QtGui import QIcon
+from PyQt6.QtCore import QPoint, Qt, QTimer
+from PyQt6.QtGui import QColor, QIcon, QMouseEvent, QPainter
 from PyQt6.QtWidgets import (
     QApplication,
-    QGraphicsOpacityEffect,
     QHBoxLayout,
     QLineEdit,
     QListWidget,
@@ -53,6 +53,9 @@ class SpellBook(QWidget):
         search_layout.addWidget(self.search_bar)
 
         self.preview = QTextBrowser()
+        self.sparkle_overlay = SparkleOverlay(self.preview.viewport())
+        self.preview.viewport().installEventFilter(self.sparkle_overlay)
+        self.preview.viewport().setMouseTracking(True)
         self.preview.setOpenExternalLinks(True)
 
         main_layout = QVBoxLayout(self)
@@ -263,6 +266,40 @@ class SpellBook(QWidget):
         self.preview.clear()
         self.tabs.setCurrentIndex(0)
         self.search_bar.setFocus()
+
+
+class SparkleOverlay(QWidget):
+    def __init__(self, target_widget):
+        super().__init__(target_widget)
+        self.setAttribute(Qt.WidgetAttribute.WA_TransparentForMouseEvents)
+        self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
+        self.setMouseTracking(True)
+        self.sparkles = []
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.update_sparkles)
+        self.timer.start(16)
+
+    def update_sparkles(self):
+        now = time.time()
+        self.sparkles = [(x, y, t) for x, y, t in self.sparkles if now - t < 0.5]
+        self.update()
+
+    def add_sparkle(self, x, y):
+        self.sparkles.append((x, y, time.time()))
+
+    def mouseMoveEvent(self, event: QMouseEvent):
+        self.add_sparkle(event.position().x(), event.position().y())
+
+    def paintEvent(self, event):
+        painter = QPainter(self)
+        painter.setRenderHint(QPainter.RenderHint.Antialiasing)
+        now = time.time()
+        for x, y, t in self.sparkles:
+            alpha = int(255 * (1 - (now - t) / 0.5))
+            color = QColor(255, 223, 0, alpha)  # Golden sparkle
+            painter.setBrush(color)
+            painter.setPen(Qt.PenStyle.NoPen)
+            painter.drawEllipse(QPoint(int(x), int(y)), 4, 4)
 
 
 def load_spells(filename="spells.json"):
