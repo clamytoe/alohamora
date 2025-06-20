@@ -1,36 +1,53 @@
 import json
+import os
+import re
 import string
 import sys
-import webbrowser
 
+import requests
+from bs4 import BeautifulSoup
+
+# from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import (
     QApplication,
+    QHBoxLayout,
     QLineEdit,
     QListWidget,
     QListWidgetItem,
     QTabWidget,
+    QTextBrowser,
     QVBoxLayout,
     QWidget,
 )
 from rapidfuzz import fuzz, process
+
+DATA_DIR = "data"
 
 
 class SpellBook(QWidget):
     def __init__(self, spells_by_letter):
         super().__init__()
         self.setWindowTitle("Hogwarts Spellbook")
-        self.resize(600, 500)
+        self.resize(900, 500)
+
+        self.spells_by_letter = spells_by_letter
+        self.all_spells = [s for spells in spells_by_letter.values() for s in spells]
 
         self.tabs = QTabWidget()
         self.search_bar = QLineEdit()
         self.search_bar.setPlaceholderText("Search for a spell…")
+        self.preview = QTextBrowser()
+        self.preview.setOpenExternalLinks(True)
 
-        layout = QVBoxLayout(self)
-        layout.addWidget(self.search_bar)
-        layout.addWidget(self.tabs)
+        # Layout
+        main_layout = QVBoxLayout(self)
+        main_layout.addWidget(self.search_bar)
 
-        self.spells_by_letter = spells_by_letter
-        self.all_spells = [s for spells in spells_by_letter.values() for s in spells]
+        split_layout = QHBoxLayout()
+        split_layout.addWidget(self.tabs, 3)
+        split_layout.addWidget(self.preview, 5)
+        main_layout.addLayout(split_layout)
+
         self.list_widgets = {}
 
         for letter in string.ascii_uppercase:
@@ -44,25 +61,60 @@ class SpellBook(QWidget):
                 item.setToolTip(spell["link"] or "No link available")
                 list_widget.addItem(item)
 
+            list_widget.itemClicked.connect(self.create_single_click_handler(spells))
+
             layout_tab.addWidget(list_widget)
             self.tabs.addTab(tab, letter)
             self.list_widgets[letter] = (list_widget, spells)
 
-            list_widget.itemDoubleClicked.connect(
-                self.create_double_click_handler(spells)
-            )
-
         self.search_bar.textChanged.connect(self.filter_across_tabs)
 
-    def create_double_click_handler(self, spell_list):
+    def create_single_click_handler(self, spell_list):
         def handler(item):
             name = item.text().split(" — ")[0]
             for spell in spell_list:
-                if spell["name"] == name and spell.get("link"):
-                    webbrowser.open(spell["link"])
+                if spell["name"] == name:
+                    summary = self.get_spell_summary(spell)
+                    self.preview.setHtml(summary)
                     break
 
         return handler
+
+    def get_spell_summary(self, spell):
+        name = spell["name"]
+        link = spell.get("link")
+        summary = "<i>No additional information available.</i>"
+
+        if not link:
+            return f"<b>{name}</b><br>{spell['description']}<br><br>{summary}"
+
+        filename = os.path.join(DATA_DIR, f"{name}.html")
+
+        # Fetch and cache if needed
+        if not os.path.exists(filename):
+            try:
+                resp = requests.get(link)
+                resp.raise_for_status()
+                os.makedirs(DATA_DIR, exist_ok=True)
+                with open(filename, "w", encoding="utf-8") as f:
+                    f.write(resp.text)
+            except Exception:
+                return f"<b>{name}</b><br>{spell['description']}<br><br><i>Failed to fetch page.</i>"
+
+        with open(filename, encoding="utf-8") as f:
+            soup = BeautifulSoup(f, "html.parser")
+
+        paragraph = soup.select("div.mw-parser-output > p")[1]
+        first_para = paragraph.get_text(strip=False) if paragraph else ""
+        para = re.sub(r"\[\d+\]", "", first_para)
+
+        return f"""
+            <h3>{name}</h3>
+            <p>{spell['description']}</p>
+            <hr>
+            <p>{para or '<i>No summary found on page.</i>'}</p>
+            <p><a href="{link}">View More</a></p>
+        """
 
     def filter_across_tabs(self, text):
         text = text.strip().lower()
@@ -70,7 +122,6 @@ class SpellBook(QWidget):
             self.reset_all_tabs()
             return
 
-        # Use fuzzy matching for broader suggestions
         spell_name_map = {s["name"]: s for s in self.all_spells}
         matches = process.extract(
             query=text,
@@ -94,7 +145,6 @@ class SpellBook(QWidget):
                 item = QListWidgetItem(f"{spell['name']} — {spell['description']}")
                 item.setToolTip(spell["link"] or "No link available")
                 list_widget.addItem(item)
-
                 if not first_exact and spell["name"].lower().startswith(text):
                     first_exact = spell
 
