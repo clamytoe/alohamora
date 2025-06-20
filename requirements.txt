@@ -2,4 +2,5 @@ beatifulsoup4
 pytest
 python-dotenv
 pyqt
+rapidfuzz
 requests

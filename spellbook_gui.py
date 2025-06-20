@@ -13,6 +13,7 @@ from PyQt6.QtWidgets import (
     QVBoxLayout,
     QWidget,
 )
+from rapidfuzz import fuzz, process
 
 
 class SpellBook(QWidget):
@@ -54,23 +55,42 @@ class SpellBook(QWidget):
             self.reset_all_tabs()
             return
 
-        first_exact_match = None
-        for letter, (list_widget, all_spells) in self.list_widgets.items():
+        # Flatten spell names and mapping
+        all_spells = [s for spells in self.spells_by_letter.values() for s in spells]
+        spell_name_map = {s["name"]: s for s in all_spells}
+
+        # Perform fuzzy matching
+        matches = process.extract(
+            query=text,
+            choices=list(spell_name_map.keys()),
+            scorer=fuzz.WRatio,  # Weighted ratio gives better mixed accuracy
+            limit=5,
+            score_cutoff=65,
+        )
+
+        matched_names = [m[0] for m in matches]
+        matched_lower = set(name.lower() for name in matched_names)
+
+        first_exact = None
+        for letter, (list_widget, spell_list) in self.list_widgets.items():
             list_widget.clear()
-            filtered = [s for s in all_spells if text in s["name"].lower()]
+            filtered = [
+                s
+                for s in spell_list
+                if s["name"].lower().startswith(text)
+                or s["name"] in matched_names
+                or s["name"].lower() in matched_lower
+            ]
             for spell in filtered:
                 item = QListWidgetItem(f"{spell['name']} — {spell['description']}")
                 list_widget.addItem(item)
+                if not first_exact and spell["name"].lower().startswith(text):
+                    first_exact = spell
 
-                # Record exact match on name start
-                if not first_exact_match and spell["name"].lower().startswith(text):
-                    first_exact_match = spell
-
-        if first_exact_match:
-            first_letter = first_exact_match["name"][0].upper()
-            if first_letter in self.list_widgets:
-                index = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".index(first_letter)
-                self.tabs.setCurrentIndex(index)
+        if first_exact:
+            first_letter = first_exact["name"][0].upper()
+            index = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".index(first_letter)
+            self.tabs.setCurrentIndex(index)
 
     def reset_all_tabs(self):
         for letter, (list_widget, all_spells) in self.list_widgets.items():
