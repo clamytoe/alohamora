@@ -6,12 +6,16 @@ import sys
 
 import requests
 from bs4 import BeautifulSoup
+from PyQt6.QtCore import QPropertyAnimation
+from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import (
     QApplication,
+    QGraphicsOpacityEffect,
     QHBoxLayout,
     QLineEdit,
     QListWidget,
     QListWidgetItem,
+    QPushButton,
     QTabWidget,
     QTextBrowser,
     QVBoxLayout,
@@ -20,13 +24,17 @@ from PyQt6.QtWidgets import (
 from rapidfuzz import fuzz, process
 
 DATA_DIR = "data"
+ICON_PATH = os.path.join("images", "alohamora.ico")
 
 
 class SpellBook(QWidget):
     def __init__(self, spells_by_letter):
         super().__init__()
+        self.setAutoFillBackground(True)
         self.setWindowTitle("Hogwarts Spellbook")
-        self.resize(900, 500)
+        self.setWindowIcon(QIcon(ICON_PATH))
+        self.setStyleSheet("background-color: white;")
+        self.resize(900, 550)
 
         self.spells_by_letter = spells_by_letter
         self.all_spells = [s for spells in spells_by_letter.values() for s in spells]
@@ -34,12 +42,21 @@ class SpellBook(QWidget):
         self.tabs = QTabWidget()
         self.search_bar = QLineEdit()
         self.search_bar.setPlaceholderText("Search for a spell…")
+        self.search_bar.setFocus()
+        reset_btn = QPushButton("⟳")
+        reset_btn.setFixedWidth(30)
+        reset_btn.setToolTip("Reset Search and Refresh View")
+        reset_btn.clicked.connect(self.reset_ui)
+
+        search_layout = QHBoxLayout()
+        search_layout.addWidget(reset_btn)
+        search_layout.addWidget(self.search_bar)
+
         self.preview = QTextBrowser()
         self.preview.setOpenExternalLinks(True)
 
-        # Layout
         main_layout = QVBoxLayout(self)
-        main_layout.addWidget(self.search_bar)
+        main_layout.addLayout(search_layout)
 
         split_layout = QHBoxLayout()
         split_layout.addWidget(self.tabs, 3)
@@ -104,13 +121,83 @@ class SpellBook(QWidget):
         with open(filename, encoding="utf-8") as f:
             soup = BeautifulSoup(f, "html.parser")
 
-        paragraph = soup.select("div.mw-parser-output > p")[1]
+        paragraphs = soup.select("div.mw-parser-output > p")
+        if len(paragraphs) > 1:
+            paragraph = soup.select("div.mw-parser-output > p")[1]
+        else:
+            paragraph = soup.select("div.mw-parser-output > p")[0]
         first_para = paragraph.get_text(strip=False) if paragraph else ""
         para = re.sub(r"\[\d+\]", "", first_para)
 
+        names = []
+        values = []
+        for section in soup.select("aside.portable-infobox > section"):
+            for div in section.select("div.pi-item"):
+                n = div.text.lstrip().rstrip()
+                n = re.sub(r"\[\d+\]", "", n)
+                if "\n" in n:
+                    n = n.split("\n")[0]
+                names.append(n)
+            for div in section.select("div.pi-data-value"):
+                if div.select("img"):
+                    i = div.select("img")[0]
+                    img_url = i["src"].split("?")[0]
+                    img_name = i["data-image-name"]
+                    img_path = os.path.join(DATA_DIR, "images", img_name)
+                    img_tag = ""
+
+                    # Download and save if not already cached
+                    os.makedirs(os.path.dirname(img_path), exist_ok=True)
+                    if not os.path.exists(img_path):
+                        try:
+                            resp = requests.get(img_url)
+                            resp.raise_for_status()
+                            with open(img_path, "wb") as f:
+                                f.write(resp.content)
+                        except Exception as e:
+                            print(f"Image download failed: {e}")
+                        else:
+                            print(f"Saved image: {img_path}")
+
+                    if os.path.exists(img_path):
+                        img_tag = (
+                            f'<img src="{img_path}" alt="{img_name}" width="70" />'
+                        )
+                    else:
+                        img_tag = f'<img src="{img_url}" alt="{img_name}" width="70" />'
+                    values.append(img_tag)
+                else:
+                    d = re.sub(r"\[\d+\]", "", div.text)
+                    values.append(d)
+        aside = dict(zip(names, values))
+
         return f"""
-            <h3>{name}</h3>
-            <p>{spell['description']}</p>
+            <h1 align="center">{name}</h1>
+            <h2>{spell['description']}</h2>
+            <p>
+                <table>
+                    <tr>
+                        <th align="right">Category</th>
+                        <td style="padding-left: 10px;">{aside.get("Incantation", "")}</td>
+                    </tr>
+                    <tr>
+                        <th align="right">Type</th>
+                        <td style="padding-left: 10px;">{aside.get("Type", "")}</td>
+                    </tr>
+                    <tr>
+                        <th align="right">Hand movement</th>
+                        <td style="padding-left: 10px;">{aside.get("Hand movement", "")}</td>
+                    </tr>
+                    <tr>
+                        <th align="right">Light</th>
+                        <td style="padding-left: 10px;">{aside.get("Light", "")}</td>
+                    </tr>
+                    <tr>
+                        <th align="right">Effect</th>
+                        <td style="padding-left: 10px;">{aside.get("Effect", "")}</td>
+                    </tr>
+                </table>
+            </p>
             <hr>
             <p>{para or '<i>No summary found on page.</i>'}</p>
             <p><a href="{link}">View More</a></p>
@@ -161,6 +248,13 @@ class SpellBook(QWidget):
                 item.setToolTip(spell["link"] or "No link available")
                 list_widget.addItem(item)
 
+    def reset_ui(self):
+        self.search_bar.clear()
+        self.reset_all_tabs()
+        self.preview.clear()
+        self.tabs.setCurrentIndex(0)
+        self.search_bar.setFocus()
+
 
 def load_spells(filename="spells.json"):
     with open(filename, encoding="utf-8") as f:
@@ -174,6 +268,8 @@ def load_spells(filename="spells.json"):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    app.setWindowIcon(QIcon(ICON_PATH))
+
     spells = load_spells()
     window = SpellBook(spells)
     window.show()
