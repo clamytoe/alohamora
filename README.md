@@ -39,13 +39,20 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-
 ## Usage
 
 ```zsh
 python get_spells.py
 python spellbook_gui.py
 ```
+
+![interface](images/interface.png)
+
+Selecting a spell will display its summary.
+
+![sample](images/sample.png)
+
+Clicking on the "View More" link will open the spell page in your default browser.
 
 
 ## Contributing
