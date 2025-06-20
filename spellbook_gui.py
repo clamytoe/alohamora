@@ -9,7 +9,7 @@ import time
 import requests
 from bs4 import BeautifulSoup
 from PyQt6.QtCore import QPoint, Qt, QTimer
-from PyQt6.QtGui import QColor, QIcon, QPainter
+from PyQt6.QtGui import QColor, QCursor, QIcon, QPainter, QPixmap
 from PyQt6.QtWidgets import (
     QApplication,
     QHBoxLayout,
@@ -43,7 +43,6 @@ class SpellBook(QWidget):
         self.tabs = QTabWidget()
         self.search_bar = QLineEdit()
         self.search_bar.setPlaceholderText("Search for a spell…")
-        self.search_bar.setFocus()
         reset_btn = QPushButton("⟳")
         reset_btn.setFixedWidth(30)
         reset_btn.setToolTip("Reset Search and Refresh View")
@@ -89,6 +88,11 @@ class SpellBook(QWidget):
             self.list_widgets[letter] = (list_widget, spells)
 
         self.search_bar.textChanged.connect(self.filter_across_tabs)
+
+        wand_pixmap = QPixmap("images/wand-cursor.png")
+        wand_cursor = QCursor(wand_pixmap, 0, 0)
+        self.sparkle_overlay.setCursor(wand_cursor)
+        self.search_bar.setFocus()
 
     def create_single_click_handler(self, spell_list):
         def handler(item):
