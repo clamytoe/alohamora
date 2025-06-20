@@ -1,18 +1,18 @@
 name: alohamora
 channels:
-  - defaults
   - conda-forge
+  - defaults
 dependencies:
-  - black
-  - flake8
-  - isort
-  - mypy
-  - pytest
-  - pytest-cov
   - python=3.13.3
-  - python-dotenv
+  - mypy
+  - pyqt
+  - black
+  - rapidfuzz
   - requests
+  - pytest-cov
   - requests-mock
   - beautifulsoup4
-  - pyqt
-  - rapidfuzz
+  - flake8
+  - pytest
+  - python-dotenv
+  - isort

@@ -7,3 +7,4 @@ pytest
 pytest-cov
 pyqt
 requests
+requests-mock
