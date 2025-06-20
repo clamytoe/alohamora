@@ -56,6 +56,8 @@ class SpellBook(QWidget):
         self.sparkle_overlay = SparkleOverlay(self.preview.viewport())
         self.preview.viewport().installEventFilter(self.sparkle_overlay)
         self.preview.viewport().setMouseTracking(True)
+        self.sparkle_overlay.resize(self.preview.viewport().size())
+        self.sparkle_overlay.show()
         self.preview.setOpenExternalLinks(True)
 
         main_layout = QVBoxLayout(self)
@@ -267,6 +269,11 @@ class SpellBook(QWidget):
         self.tabs.setCurrentIndex(0)
         self.search_bar.setFocus()
 
+    def resizeEvent(self, event):
+        super().resizeEvent(event)
+        if hasattr(self, "sparkle_overlay"):
+            self.sparkle_overlay.resize(self.preview.viewport().size())
+
 
 class SparkleOverlay(QWidget):
     def __init__(self, target_widget):
@@ -286,6 +293,7 @@ class SparkleOverlay(QWidget):
 
     def add_sparkle(self, x, y):
         self.sparkles.append((x, y, time.time()))
+        print(f"✨ Sparkle at ({x:.1f}, {y:.1f})")
 
     def mouseMoveEvent(self, event: QMouseEvent):
         self.add_sparkle(event.position().x(), event.position().y())
