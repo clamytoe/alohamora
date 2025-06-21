@@ -417,14 +417,26 @@ class SparkleOverlay(QWidget):
         for x, y, start in self.rings[:]:
             age = now - start
             if age < 0.4:
-                radius = age * 100  # Expands over time
-                alpha = int(255 * (1 - age / 0.4))
-                color = QColor(245, 245, 245, alpha)  # greyish glow
-                pen = QPen(color)
+                progress = age / 0.4
+                outer_radius = progress * 100
+                inner_radius = outer_radius * 0.6
+
+                # Draw soft edge glow ring
+                alpha = int(255 * (1 - progress))
+                ring_color = QColor(245, 245, 245, alpha)
+                pen = QPen(ring_color)
                 pen.setWidth(2)
                 painter.setPen(pen)
                 painter.setBrush(Qt.BrushStyle.NoBrush)
-                painter.drawEllipse(QPointF(x, y), radius, radius)
+                painter.drawEllipse(QPointF(x, y), outer_radius, outer_radius)
+
+                # Draw subtle inner ripple
+                fade = math.sin(math.pi * (1 - progress))  # Smooth in-out pulse
+                ripple_alpha = int(20 * fade)
+                ripple_color = QColor(245, 245, 245, ripple_alpha)
+                painter.setPen(Qt.PenStyle.NoPen)
+                painter.setBrush(ripple_color)
+                painter.drawEllipse(QPointF(x, y), inner_radius, inner_radius)
             else:
                 self.rings.remove([x, y, start])
 
