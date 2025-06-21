@@ -26,8 +26,10 @@ from PyQt6.QtWidgets import (
 )
 from rapidfuzz import fuzz, process
 
-DATA_DIR = "data"
-ICON_PATH = os.path.join("images", "alohamora.ico")
+from constants import DATA_DIR, ICON_PATH, SPELL_COLORS
+
+# DATA_DIR = "data"
+# ICON_PATH = os.path.join("images", "alohamora.ico")
 
 
 class SpellBook(QWidget):
