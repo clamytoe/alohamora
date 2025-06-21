@@ -346,7 +346,7 @@ class SparkleOverlay(QWidget):
         height = self.parent().height()
         updated = []
 
-        for x, y, vx, vy, t, color in self.sparkles:
+        for x, y, vx, vy, t, color, size in self.sparkles:
             age = now - t
             if age < 0.75:
                 # Move sparkle
@@ -363,7 +363,7 @@ class SparkleOverlay(QWidget):
                     vy *= -1
                     y = max(0, min(height, y))
 
-                updated.append([x, y, vx, vy, t, color])
+                updated.append([x, y, vx, vy, t, color, size])
 
         self.sparkles = updated
         self.update()
@@ -374,7 +374,8 @@ class SparkleOverlay(QWidget):
         vx *= friction
         vy *= friction
         color = random.choice(self.sparkle_colors)
-        self.sparkles.append([x, y, vx, vy, time.time(), color])
+        size = random.uniform(3, 6)
+        self.sparkles.append([x, y, vx, vy, time.time(), color, size])
 
     def burst_sparkles(self, x, y, count=24):
         now = time.time()
@@ -384,7 +385,8 @@ class SparkleOverlay(QWidget):
             vx = math.cos(angle) * speed
             vy = math.sin(angle) * speed
             color = random.choice(self.sparkle_colors)
-            self.sparkles.append([x, y, vx, vy, now, color])
+            size = random.uniform(3, 6)
+            self.sparkles.append([x, y, vx, vy, now, color, size])
 
     def estimate_velocity(self):
         if len(self.mouse_history) < 2:
@@ -401,7 +403,7 @@ class SparkleOverlay(QWidget):
         painter = QPainter(self)
         painter.setRenderHint(QPainter.RenderHint.Antialiasing)
         now = time.time()
-        for x, y, _, _, t, color in self.sparkles:
+        for x, y, _, _, t, color, size in self.sparkles:
             age = now - t
             alpha = int(255 * (1 - age / 0.5))
             if color.isValid():
