@@ -1,4 +1,5 @@
 import json
+import math
 import os
 import random
 import re
@@ -56,8 +57,6 @@ class SpellBook(QWidget):
         self.sparkle_overlay = SparkleOverlay(self.preview.viewport())
         self.preview.viewport().installEventFilter(self)
         self.preview.viewport().setMouseTracking(True)
-        # self.preview.anchorHovered.connect(self.handle_link_hover)
-        # self.preview.anchorHovered[str].connect(self.handle_link_hover)
         self.sparkle_overlay.resize(self.preview.viewport().size())
         self.sparkle_overlay.show()
         self.preview.setOpenExternalLinks(True)
@@ -120,15 +119,19 @@ class SpellBook(QWidget):
         return handler
 
     def eventFilter(self, source, event):
-        if source == self.preview.viewport() and event.type() == event.Type.MouseMove:
-            cursor = self.preview.cursorForPosition(event.position().toPoint())
-            fmt = cursor.charFormat()
-            if fmt.isAnchor():
-                self.preview.viewport().setCursor(self.glowing_wand_cursor)
-            else:
-                self.preview.viewport().setCursor(self.wand_cursor)
+        if source == self.preview.viewport():
+            if event.type() == event.Type.MouseMove:
+                self.sparkle_overlay.trigger_sparkle(event.position())
+                cursor = self.preview.cursorForPosition(event.position().toPoint())
+                fmt = cursor.charFormat()
+                if fmt.isAnchor():
+                    source.setCursor(self.glowing_wand_cursor)
+                else:
+                    source.setCursor(self.wand_cursor)
 
-            self.sparkle_overlay.trigger_sparkle(event.position())
+            elif event.type() == event.Type.MouseButtonPress:
+                pos = event.position()
+                self.sparkle_overlay.burst_sparkles(pos.x(), pos.y())
         return super().eventFilter(source, event)
 
     def get_spell_summary(self, spell):
@@ -342,6 +345,14 @@ class SparkleOverlay(QWidget):
         color = random.choice(colors)
         self.sparkles.append((x, y, time.time(), color))
 
+    def burst_sparkles(self, x, y, count=12):
+        for _ in range(count):
+            angle = random.uniform(0, 2 * math.pi)
+            radius = random.uniform(0, 8)
+            dx = math.cos(angle) * radius
+            dy = math.sin(angle) * radius
+            self.add_sparkle(x + dx, y + dy)
+
     def trigger_sparkle(self, pos):
         self.add_sparkle(pos.x(), pos.y())
         # print(f"✨ Sparkle at {pos.x():.1f}, {pos.y():.1f}")
@@ -350,13 +361,15 @@ class SparkleOverlay(QWidget):
         painter = QPainter(self)
         painter.setRenderHint(QPainter.RenderHint.Antialiasing)
         now = time.time()
-        for x, y, t, color in self.sparkles:
+        for x, y, t, base_color in self.sparkles:
             alpha = int(255 * (1 - (now - t) / 0.5))
-            c = QColor(color)
-            c.setAlpha(alpha)
-            painter.setBrush(c)
-            painter.setPen(Qt.PenStyle.NoPen)
-            painter.drawEllipse(QPoint(int(x), int(y)), 4, 4)
+            if base_color.isValid():
+                color = QColor(
+                    base_color.red(), base_color.green(), base_color.blue(), alpha
+                )
+                painter.setBrush(color)
+                painter.setPen(Qt.PenStyle.NoPen)
+                painter.drawEllipse(QPoint(int(x), int(y)), 4, 4)
 
 
 def load_spells(filename="spells.json"):
