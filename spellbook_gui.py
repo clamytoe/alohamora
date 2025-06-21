@@ -6,10 +6,11 @@ import re
 import string
 import sys
 import time
+from collections import deque
 
 import requests
 from bs4 import BeautifulSoup
-from PyQt6.QtCore import QPoint, QPointF, Qt, QTimer
+from PyQt6.QtCore import QPointF, Qt, QTimer
 from PyQt6.QtGui import QColor, QCursor, QIcon, QPainter, QPixmap
 from PyQt6.QtWidgets import (
     QApplication,
@@ -121,6 +122,9 @@ class SpellBook(QWidget):
     def eventFilter(self, source, event):
         if source == self.preview.viewport():
             if event.type() == event.Type.MouseMove:
+                now = time.time()
+                pos = event.position().toPoint()
+                self.sparkle_overlay.mouse_history.append((pos.x(), pos.y(), now))
                 self.sparkle_overlay.trigger_sparkle(event.position())
                 cursor = self.preview.cursorForPosition(event.position().toPoint())
                 fmt = cursor.charFormat()
@@ -180,9 +184,9 @@ class SpellBook(QWidget):
             for div in section.select("div.pi-data-value"):
                 if div.select("img"):
                     i = div.select("img")[0]
-                    img_url = i["src"].split("?")[0]
+                    img_url = i["src"].split("?")[0]  # type: ignore
                     img_name = i["data-image-name"]
-                    img_path = os.path.join(DATA_DIR, "images", img_name)
+                    img_path = os.path.join(DATA_DIR, "images", img_name)  # type: ignore
                     img_tag = ""
 
                     # Download and save if not already cached
@@ -333,42 +337,70 @@ class SparkleOverlay(QWidget):
             QColor(144, 238, 144, 255),  # pale green
             QColor(221, 160, 221, 255),  # lavender
         ]
+        self.mouse_history = deque(maxlen=5)  # from collections import deque
 
     def update_sparkles(self):
-        dt = 0.016  # ~60 FPS
         now = time.time()
+        dt = 0.016  # ~60 FPS for smooth motion
+        width = self.parent().width()
+        height = self.parent().height()
         updated = []
+
         for x, y, vx, vy, t, color in self.sparkles:
             age = now - t
-            if age < 0.5:
+            if age < 0.75:
+                # Move sparkle
                 x += vx * dt
                 y += vy * dt
+
+                # Bounce on horizontal edges
+                if x <= 0 or x >= width:
+                    vx *= -1
+                    x = max(0, min(width, x))
+
+                # Bounce on vertical edges
+                if y <= 0 or y >= height:
+                    vy *= -1
+                    y = max(0, min(height, y))
+
                 updated.append([x, y, vx, vy, t, color])
+
         self.sparkles = updated
         self.update()
 
-    def add_sparkle(self, x, y, vx=0.0, vy=0.0):
+    def add_sparkle(self, x, y):
+        vx, vy = self.estimate_velocity()
         color = random.choice(self.sparkle_colors)
         self.sparkles.append([x, y, vx, vy, time.time(), color])
 
     def burst_sparkles(self, x, y, count=12):
         for _ in range(count):
             angle = random.uniform(0, 2 * math.pi)
-            speed = random.uniform(30, 100)  # pixels per second
+            speed = random.uniform(10, 40)  # pixels per second
             vx = math.cos(angle) * speed
             vy = math.sin(angle) * speed
+            friction = 0.92  # 0.9–0.98 is a good sweet spot
+            vx *= friction
+            vy *= friction
             color = random.choice(self.sparkle_colors)
             self.sparkles.append([x, y, vx, vy, time.time(), color])
 
+    def estimate_velocity(self):
+        if len(self.mouse_history) < 2:
+            return 0.0, 0.0
+        (x1, y1, t1), (x2, y2, t2) = self.mouse_history[-2], self.mouse_history[-1]
+        dt = max(t2 - t1, 1e-5)
+        scale = 0.5  # Tune this multiplier for "whip speed"
+        return scale * (x2 - x1) / dt, scale * (y2 - y1) / dt
+
     def trigger_sparkle(self, pos):
         self.add_sparkle(pos.x(), pos.y())
-        # print(f"✨ Sparkle at {pos.x():.1f}, {pos.y():.1f}")
 
     def paintEvent(self, event):
         painter = QPainter(self)
         painter.setRenderHint(QPainter.RenderHint.Antialiasing)
         now = time.time()
-        for x, y, vx, vy, t, color in self.sparkles:
+        for x, y, _, _, t, color in self.sparkles:
             age = now - t
             alpha = int(255 * (1 - age / 0.5))
             if color.isValid():
