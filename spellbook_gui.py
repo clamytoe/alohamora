@@ -11,7 +11,7 @@ from collections import deque
 import requests
 from bs4 import BeautifulSoup
 from PyQt6.QtCore import QPointF, Qt, QTimer
-from PyQt6.QtGui import QColor, QCursor, QIcon, QPainter, QPixmap
+from PyQt6.QtGui import QColor, QCursor, QIcon, QPainter, QPen, QPixmap
 from PyQt6.QtWidgets import (
     QApplication,
     QHBoxLayout,
@@ -325,6 +325,7 @@ class SparkleOverlay(QWidget):
         self.setAttribute(Qt.WidgetAttribute.WA_TransparentForMouseEvents)
         self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
         self.setMouseTracking(True)
+        self.rings = []  # Each entry: [x, y, start_time]
         self.sparkles = []
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.update_sparkles)
@@ -387,6 +388,7 @@ class SparkleOverlay(QWidget):
             color = random.choice(self.sparkle_colors)
             size = random.uniform(3, 6)
             self.sparkles.append([x, y, vx, vy, now, color, size])
+            self.rings.append([x, y, time.time()])
 
     def estimate_velocity(self):
         if len(self.mouse_history) < 2:
@@ -412,6 +414,19 @@ class SparkleOverlay(QWidget):
                 painter.setPen(Qt.PenStyle.NoPen)
                 size = 2 + 2 * (1 - age / 0.75)  # start large, shrink over life
                 painter.drawEllipse(QPointF(x, y), size, size)
+        for x, y, start in self.rings[:]:
+            age = now - start
+            if age < 0.4:
+                radius = age * 100  # Expands over time
+                alpha = int(255 * (1 - age / 0.4))
+                color = QColor(245, 245, 245, alpha)  # greyish glow
+                pen = QPen(color)
+                pen.setWidth(2)
+                painter.setPen(pen)
+                painter.setBrush(Qt.BrushStyle.NoBrush)
+                painter.drawEllipse(QPointF(x, y), radius, radius)
+            else:
+                self.rings.remove([x, y, start])
 
 
 def load_spells(filename="spells.json"):
