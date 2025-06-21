@@ -9,7 +9,7 @@ import time
 
 import requests
 from bs4 import BeautifulSoup
-from PyQt6.QtCore import QPoint, Qt, QTimer
+from PyQt6.QtCore import QPoint, QPointF, Qt, QTimer
 from PyQt6.QtGui import QColor, QCursor, QIcon, QPainter, QPixmap
 from PyQt6.QtWidgets import (
     QApplication,
@@ -326,32 +326,39 @@ class SparkleOverlay(QWidget):
         self.timer.timeout.connect(self.update_sparkles)
         self.timer.start(16)
 
-    def update_sparkles(self):
-        now = time.time()
-        self.sparkles = [
-            (x, y, t, color) for x, y, t, color in self.sparkles if now - t < 0.5
-        ]
-        self.update()
-
-    def add_sparkle(self, x, y):
-        # Soft magical hues
-        colors = [
+        self.sparkle_colors = [
             QColor(255, 223, 0, 255),  # gold
             QColor(173, 216, 230, 255),  # light blue
             QColor(255, 182, 193, 255),  # pink
             QColor(144, 238, 144, 255),  # pale green
             QColor(221, 160, 221, 255),  # lavender
         ]
-        color = random.choice(colors)
-        self.sparkles.append((x, y, time.time(), color))
+
+    def update_sparkles(self):
+        dt = 0.016  # ~60 FPS
+        now = time.time()
+        updated = []
+        for x, y, vx, vy, t, color in self.sparkles:
+            age = now - t
+            if age < 0.5:
+                x += vx * dt
+                y += vy * dt
+                updated.append([x, y, vx, vy, t, color])
+        self.sparkles = updated
+        self.update()
+
+    def add_sparkle(self, x, y, vx=0.0, vy=0.0):
+        color = random.choice(self.sparkle_colors)
+        self.sparkles.append([x, y, vx, vy, time.time(), color])
 
     def burst_sparkles(self, x, y, count=12):
         for _ in range(count):
             angle = random.uniform(0, 2 * math.pi)
-            radius = random.uniform(0, 8)
-            dx = math.cos(angle) * radius
-            dy = math.sin(angle) * radius
-            self.add_sparkle(x + dx, y + dy)
+            speed = random.uniform(30, 100)  # pixels per second
+            vx = math.cos(angle) * speed
+            vy = math.sin(angle) * speed
+            color = random.choice(self.sparkle_colors)
+            self.sparkles.append([x, y, vx, vy, time.time(), color])
 
     def trigger_sparkle(self, pos):
         self.add_sparkle(pos.x(), pos.y())
@@ -361,15 +368,14 @@ class SparkleOverlay(QWidget):
         painter = QPainter(self)
         painter.setRenderHint(QPainter.RenderHint.Antialiasing)
         now = time.time()
-        for x, y, t, base_color in self.sparkles:
-            alpha = int(255 * (1 - (now - t) / 0.5))
-            if base_color.isValid():
-                color = QColor(
-                    base_color.red(), base_color.green(), base_color.blue(), alpha
-                )
-                painter.setBrush(color)
+        for x, y, vx, vy, t, color in self.sparkles:
+            age = now - t
+            alpha = int(255 * (1 - age / 0.5))
+            if color.isValid():
+                c = QColor(color.red(), color.green(), color.blue(), alpha)
+                painter.setBrush(c)
                 painter.setPen(Qt.PenStyle.NoPen)
-                painter.drawEllipse(QPoint(int(x), int(y)), 4, 4)
+                painter.drawEllipse(QPointF(x, y), 3, 3)
 
 
 def load_spells(filename="spells.json"):
