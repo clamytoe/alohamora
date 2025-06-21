@@ -370,20 +370,21 @@ class SparkleOverlay(QWidget):
 
     def add_sparkle(self, x, y):
         vx, vy = self.estimate_velocity()
+        friction = 0.92  # 0.9–0.98 is a good sweet spot
+        vx *= friction
+        vy *= friction
         color = random.choice(self.sparkle_colors)
         self.sparkles.append([x, y, vx, vy, time.time(), color])
 
-    def burst_sparkles(self, x, y, count=12):
+    def burst_sparkles(self, x, y, count=24):
+        now = time.time()
         for _ in range(count):
             angle = random.uniform(0, 2 * math.pi)
-            speed = random.uniform(10, 40)  # pixels per second
+            speed = random.uniform(60, 140)  # shoot outward with force
             vx = math.cos(angle) * speed
             vy = math.sin(angle) * speed
-            friction = 0.92  # 0.9–0.98 is a good sweet spot
-            vx *= friction
-            vy *= friction
             color = random.choice(self.sparkle_colors)
-            self.sparkles.append([x, y, vx, vy, time.time(), color])
+            self.sparkles.append([x, y, vx, vy, now, color])
 
     def estimate_velocity(self):
         if len(self.mouse_history) < 2:
@@ -407,7 +408,8 @@ class SparkleOverlay(QWidget):
                 c = QColor(color.red(), color.green(), color.blue(), alpha)
                 painter.setBrush(c)
                 painter.setPen(Qt.PenStyle.NoPen)
-                painter.drawEllipse(QPointF(x, y), 3, 3)
+                size = 2 + 2 * (1 - age / 0.75)  # start large, shrink over life
+                painter.drawEllipse(QPointF(x, y), size, size)
 
 
 def load_spells(filename="spells.json"):
